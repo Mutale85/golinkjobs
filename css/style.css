@@ -1,0 +1,33 @@
+body {
+	font-family: proxima-nova,Sans-serif;
+}
+section {
+	margin: 6em auto;
+}
+.sectionOne {
+	margin: 7em auto;
+	padding: 1em;
+}
+.infoTitle {
+	color: #1e2a37;
+	font-size: 60px;
+	font-weight: 800;
+	letter-spacing: 2px;
+}
+.infoTitleTwo {
+	font-size: 60px;
+	font-weight: 800;
+	letter-spacing: 2px;
+	text-align: center;
+}
+.sectionTwo {
+	--stripe: #cfd8dc;
+	--bg: #e1e1e1;
+
+	background: linear-gradient(135deg, var(--bg) 25%, transparent 25%) -50px 0,
+	linear-gradient(225deg, var(--bg) 25%, transparent 25%) -50px 0,
+	linear-gradient(315deg, var(--bg) 25%, transparent 25%),
+	linear-gradient(45deg, var(--bg) 25%, transparent 25%);
+	background-size: 100px 100px;
+	background-color: var(--stripe);
+}
