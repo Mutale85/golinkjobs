@@ -58,47 +58,51 @@
 		<div class="container-fluid border-top p-5">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-2">
+					<!-- <div class="col-md-2">
 						<div class="form-group mb-5">
 							<label class="mb-2 label">Type of Employment</label>
 							<br>
 							<label>
-								<input class="form-check-input" type="checkbox" name="type_of_emaploymen[]" id="type_of_emaploymen" value="Full Time"> Full Time
+								<input class="form-check-input" type="checkbox" name="type_of_emaployment" id="type_of_emaployment" value="Full Time"> Full Time
 							</label>
 							<br>
 							<label>
-								<input class="form-check-input" type="checkbox" name="type_of_emaploymen[]" id="type_of_emaploymen" value="Part Time"> Part Time
+								<input class="form-check-input" type="checkbox" name="type_of_emaployment" id="type_of_emaployment" value="Part Time"> Part Time
+							</label>
+							<br>
+							<label>
+								<input class="form-check-input" type="checkbox" name="type_of_emaployment" id="type_of_emaployment" value="Contract"> Contract
+							</label>
+							<br>
+							<label>
+								<input class="form-check-input" type="checkbox" name="location" id="location" value="1"> World Wide
+							</label>
+							<br>
+							<label>
+								<input class="form-check-input" type="checkbox" name="location" id="location" value="2"> Other Locations
 							</label>
 							<br>
 							
-							<label>
-								<input class="form-check-input" type="checkbox" name="type_of_emaploymen[]" id="type_of_emaploymen" value="Contract"> Contract
-							</label>
 						</div>
-					</div>
-					<div class="col-md-10">
-						<div class="row">
-							<div class="col-md-4">
-								
-								<div class="job-cards">
-									<div class="job-card">
-										<div class="job-card-header">
-											<img src="uploads/" alt="logo">
-											<div class="menu-dot"></div>
-										</div>
-										<div class="jobTitle">UI / UX Designer</div>
-										<div class="jobDescription">
-											The User Experience Designer position exists to create compelling and digital user experience through excellent design...
-										</div>
-										<div class="job-detail-buttons">
-											<button class="search-buttons detail-button">Full Time</button>
-											
-										</div>
-										<div class="job-card-buttons">
-											<a href="" target="_blank"> Apply Now</a>
-											<button class="search-buttons card-buttons-msg">Send to Email</button>
-										</div>
-									</div>
+					</div> -->
+					
+					<div class="col-md-12">
+						<div class="job-cards">
+							<div class="job-card">
+								<div class="job-card-header">
+									<img src="uploads/" alt="logo">
+									<div class="menu-dot"></div>
+								</div>
+								<div class="jobTitle">UI / UX Designer</div>
+								<div class="jobDescription">
+									The User Experience Designer position exists to create compelling and digital user experience through excellent design...
+								</div>
+								<div class="job-detail-buttons">
+									<button class="search-buttons detail-button">Full Time</button>
+								</div>
+								<div class="job-card-buttons">
+									<a href="" target="_blank"> Apply Now</a>
+									<button class="search-buttons card-buttons-msg">Send to Email</button>
 								</div>
 							</div>
 						</div>
