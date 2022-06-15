@@ -19,11 +19,45 @@
 				border-top-right-radius: 3px;
 				border-bottom-right-radius: 3px;
 			}
+			a:active, a:link {
+			  text-decoration:none;
+			}
+			
+			.postedJob {
+				display: flex;
+				border: 1px solid burlywood;
+				background-color: #e6f7ec;
+				color: #000;
+
+			}
+			.companyLogo{
+				flex: 2;
+				width: 60%;
+				display: flex;
+				padding-top: 1em;
+			}
+			.companyLogo .coyLogo {
+				margin-right: 8px;
+			}
+			.jobDesc {
+				flex: 1;
+				width: 40%;
+			}
 			@media screen and (max-width: 700px) {
 				.bgImage {
 				   padding: 0em;
 				}
+				.jobcard {
+					margin-left: -1.5em;
+					border-left: none;
+					border-right:1px solid tomato;
+					padding: 0;
+				}
+				.companyLogo img {
+					display: none;
+				}
 			}
+
     	</style>
     	<!-- <link rel="stylesheet" type="text/css" href="css/jobs.css">
     	<script type="text/javascript" src="js/jobs.js"></script>
@@ -55,57 +89,89 @@
 				</div>
 			</div>
 		</section>
-		<div class="container-fluid border-top p-5">
+		<div class="container-fluid border-top pt-4">
+
 			<div class="container">
 				<div class="row">
-					<!-- <div class="col-md-2">
-						<div class="form-group mb-5">
-							<label class="mb-2 label">Type of Employment</label>
-							<br>
-							<label>
-								<input class="form-check-input" type="checkbox" name="type_of_emaployment" id="type_of_emaployment" value="Full Time"> Full Time
-							</label>
-							<br>
-							<label>
-								<input class="form-check-input" type="checkbox" name="type_of_emaployment" id="type_of_emaployment" value="Part Time"> Part Time
-							</label>
-							<br>
-							<label>
-								<input class="form-check-input" type="checkbox" name="type_of_emaployment" id="type_of_emaployment" value="Contract"> Contract
-							</label>
-							<br>
-							<label>
-								<input class="form-check-input" type="checkbox" name="location" id="location" value="1"> World Wide
-							</label>
-							<br>
-							<label>
-								<input class="form-check-input" type="checkbox" name="location" id="location" value="2"> Other Locations
-							</label>
-							<br>
-							
-						</div>
-					</div> -->
-					
 					<div class="col-md-12">
-						<div class="job-cards">
-							<div class="job-card">
-								<div class="job-card-header">
-									<img src="uploads/" alt="logo">
-									<div class="menu-dot"></div>
+						<a href="">
+							<div class="postedJob mb-3 p-2">
+								<div class="companyLogo">
+									<div class="1">
+										<img src="https://weblister.co/images/icon_new.png" alt="logo" class="img-gluid coyLogo" width="60">
+									</div>
+									<div class="2">
+										<h4>Fire Fighter</h4>
+										<p>OSABOX LIMITED COMPANY</p>
+									</div>
 								</div>
-								<div class="jobTitle">UI / UX Designer</div>
-								<div class="jobDescription">
-									The User Experience Designer position exists to create compelling and digital user experience through excellent design...
-								</div>
-								<div class="job-detail-buttons">
-									<button class="search-buttons detail-button">Full Time</button>
-								</div>
-								<div class="job-card-buttons">
-									<a href="" target="_blank"> Apply Now</a>
-									<button class="search-buttons card-buttons-msg">Send to Email</button>
+								<div class="jobDesc">
+									<p>Full Time, Remote Job | World Wide</p>
+									<p>Dealine: 3, Jan 2023 - <small>17 Days</small> </p>
+									<!-- <p><button class="btn btn-info">Apply</button></p> -->
 								</div>
 							</div>
-						</div>
+						</a>
+					</div>
+					<div class="">
+						<a href="">
+							<div class="postedJob mb-3 p-2">
+								<div class="companyLogo">
+									<div class="1">
+										<img src="https://joinratings.com/images/Logo2.png" alt="logo" class="img-gluid coyLogo" width="60">
+									</div>
+									<div class="2">
+										<h4>Specialist consultant in Phamacology</h4>
+										<p>OSABOX LIMITED COMPANY</p>
+									</div>
+								</div>
+								<div class="jobDesc">
+									<p>Full Time, Remote Job | World Wide</p>
+									<p>Dealine: 3, Jan 2023 - <small>17 Days</small> </p>
+									<!-- <p><button class="btn btn-info">Apply</button></p> -->
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="">
+						<a href="">
+							<div class="postedJob mb-3 p-2">
+								<div class="companyLogo">
+									<div class="1">
+										<img src="https://joinratings.com/images/Logo2.png" alt="logo" class="img-gluid coyLogo" width="60">
+									</div>
+									<div class="2">
+										<h4>Specialist consultant in Phamacology</h4>
+										<p>OSABOX LIMITED COMPANY</p>
+									</div>
+								</div>
+								<div class="jobDesc">
+									<p>Full Time, Remote Job | World Wide</p>
+									<p>Dealine: 3, Jan 2023 - <small>17 Days</small> </p>
+									<!-- <p><button class="btn btn-info">Apply</button></p> -->
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="">
+						<a href="">
+							<div class="postedJob mb-3 p-2">
+								<div class="companyLogo">
+									<div class="1">
+										<img src="https://joinratings.com/images/Logo2.png" alt="logo" class="img-gluid coyLogo" width="60">
+									</div>
+									<div class="2">
+										<h4>Specialist consultant in Phamacology</h4>
+										<p>OSABOX LIMITED COMPANY</p>
+									</div>
+								</div>
+								<div class="jobDesc">
+									<p>Full Time, Remote Job | World Wide</p>
+									<p>Dealine: 3, Jan 2023 - <small>17 Days</small> </p>
+									<!-- <p><button class="btn btn-info">Apply</button></p> -->
+								</div>
+							</div>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -171,41 +237,41 @@
 		// 		lock.innerHTML = '<i class="bi bi-eye"></i>';
 		// 	}
 		// })
-		create_account.addEventListener('click', (event)=>{
-			if (product_name.value == "") {
-				alert("Product name is required");
-				product_name.focus();
-				return false;
-			}
-			if (email.value == "") {
-				alert("Email address is required");
-				email.focus();
-				return false;
-			}
+		// create_account.addEventListener('click', (event)=>{
+		// 	if (product_name.value == "") {
+		// 		alert("Product name is required");
+		// 		product_name.focus();
+		// 		return false;
+		// 	}
+		// 	if (email.value == "") {
+		// 		alert("Email address is required");
+		// 		email.focus();
+		// 		return false;
+		// 	}
 
-			if (password.value == "") {
-				alert("Password is required");
-				password.focus();
-				return false;
-			}
+		// 	if (password.value == "") {
+		// 		alert("Password is required");
+		// 		password.focus();
+		// 		return false;
+		// 	}
 
-			var xhr = new XMLHttpRequest();
-			var data = new FormData(partnersForm);
-			var url = 'parsers/partners-account';
-			xhr.open('POST', url, true);
-			xhr.onreadystatechange = function(){
-				if (xhr.readyState == 4 && xhr.status == 200) {
-					var r = xhr.responseText;
-					document.getElementById('response').innerHTML = r;
-					alert(r);
-					create_account.innerHTML = 'Create Account';
-				}else{
-					var txt = xhr.responseText;
-					alert(txt);
-				}
-			}
-			create_account.innerHTML = '<i class="bi bi-spinner bi-spin"></i>';
-			xhr.send(data);
-		})
+		// 	var xhr = new XMLHttpRequest();
+		// 	var data = new FormData(partnersForm);
+		// 	var url = 'parsers/partners-account';
+		// 	xhr.open('POST', url, true);
+		// 	xhr.onreadystatechange = function(){
+		// 		if (xhr.readyState == 4 && xhr.status == 200) {
+		// 			var r = xhr.responseText;
+		// 			document.getElementById('response').innerHTML = r;
+		// 			alert(r);
+		// 			create_account.innerHTML = 'Create Account';
+		// 		}else{
+		// 			var txt = xhr.responseText;
+		// 			alert(txt);
+		// 		}
+		// 	}
+		// 	create_account.innerHTML = '<i class="bi bi-spinner bi-spin"></i>';
+		// 	xhr.send(data);
+		// })
 	</script>
 </html>
