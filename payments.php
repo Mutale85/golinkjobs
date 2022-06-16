@@ -1,7 +1,6 @@
 <?php
 	use PHPMailer\PHPMailer\PHPMailer;
 	use PHPMailer\PHPMailer\Exception;
-	include "includes/db.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -1,3 +1,4 @@
+<?php include "includes/db.php";?>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -13,7 +14,7 @@
 <style>
     .success_btn {
         border: none;
-        padding: 1em 1.3em;
+        padding: .7em 1.1em;
         border-radius: 6px;
         background-color: #1ecbe1;
         color: #fff;

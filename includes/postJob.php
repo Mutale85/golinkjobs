@@ -31,7 +31,7 @@
 			
 			$region = 'World Wide';
 		}
-		$sql = $connect->prepare("INSERT INTO `posted_jobs`(`job_title`, `job_category`, `application_link`, `role_open_mode`, `job_description`, `job_type`, `salary_range`, `start_date`, `application_deadline`, `estimated_period`, `company_name`, `email`, `company_location`, `company_logo`, `company_website`, `region`) VALUES (? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,?)");
+		$sql = $connect->prepare("INSERT INTO `posted_jobs`(`job_title`, `job_category`, `application_link`, `role_open_mode`, `job_description`, `job_type`, `salary_range`, `start_date`, `application_deadline`, `estimated_period`, `company_name`, `email`, `company_location`, `company_logo`, `company_website`, `region`) VALUES (? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,?, ?)");
 		$sql->execute(array($job_title, $job_category, $application_link, $role_open_mode, $job_description, $job_type, $salary_range, $start_date, $application_deadline, $estimated_period, $company_name, $email, $company_location, $company_logo, $company_website, $region));
 		$last_id = $connect->lastInsertId();
 

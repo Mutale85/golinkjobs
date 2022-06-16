@@ -15,6 +15,13 @@
     			width: 60%;
     			margin: 3em auto;
     		}
+    		@media screen and (max-width: 700px) {
+    			.form {
+    				width: 100%;
+    				padding: .5em;
+    				border: none;
+    			}
+    		}
     	</style>
     	<link href="summernote/summernote-lite.min.css" rel="stylesheet">
     	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
@@ -29,15 +36,15 @@
     				
     				<div class="col-md-12">
     					<div class="form">
-	    					<h2 class="mb-5">Post a Job For $2.99 a Day</h2>
+	    					<h2 class="mb-5 text-center">Post A Job For $2.99 / Day</h2>
 	    					<hr>
 	    					<form method="post" id="jobForm" enctype="multipart/form-data">
 	    						<div class="row">
-		    						<div class="form-group col-md-4 mb-5">
+		    						<div class="form-group col-md-12 mb-5">
 		    							<label class="mb-2 label">Job Title <i class="bi bi-asterisk"></i></label>
 		    							<input type="text" name="job_title" id="job_title" class="form-control" required>
 		    						</div>
-		    						<div class="form-group col-md-4 mb-5">
+		    						<div class="form-group col-md-6 mb-5">
 		    							<label class="mb-2 label">Job Category <i class="bi bi-asterisk"></i></label>
 		    							<select class="form-control" name="job_category" id="job_catgory" required>
 		    								<option value="">Select</option>
@@ -53,7 +60,7 @@
 		    								<option value="Other">Other</option>
 		    							</select>
 		    						</div>
-		    						<div class="form-group col-md-4 mb-5">
+		    						<div class="form-group col-md-6 mb-5">
 		    							<label class="mb-2 label">Application Link or Email <i class="bi bi-asterisk"></i></label>
 		    							<input type="text" name="application_link" id="application_link" class="form-control" required>
 		    						</div>

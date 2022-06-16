@@ -25,10 +25,10 @@
 			
 			.postedJob {
 				display: flex;
-				border: 1px solid burlywood;
-				background-color: #e6f7ec;
+				border: 1px solid #1E98E1;
 				color: #000;
-
+				box-shadow: 0 0 5px rgba(0, 0, 0, 1.0);
+				border-radius: 6px;
 			}
 			.companyLogo{
 				flex: 2;
@@ -43,6 +43,10 @@
 				flex: 1;
 				width: 40%;
 			}
+			.jobTitle {
+				font-size: ;
+			}
+
 			@media screen and (max-width: 700px) {
 				.bgImage {
 				   padding: 0em;
@@ -55,6 +59,16 @@
 				}
 				.companyLogo img {
 					display: none;
+				}
+				.jobTitle {
+					font-size: 1em;
+				}
+				.div2 p {
+					font-size: .9em;
+					color: #;
+				}
+				.jobDesc p {
+					font-size: .8em;
 				}
 			}
 
@@ -89,90 +103,37 @@
 				</div>
 			</div>
 		</section>
-		<div class="container-fluid border-top pt-4">
+		<div class="container-fluid border-top pt-4 mb-5">
 
 			<div class="container">
 				<div class="row">
+					<?php
+						$query = $connect->prepare("SELECT * FROM posted_jobs ");
+						$query->execute();
+						foreach($query->fetchAll() as $row){
+							extract($row);
+					?>
 					<div class="col-md-12">
 						<a href="">
 							<div class="postedJob mb-3 p-2">
 								<div class="companyLogo">
-									<div class="1">
-										<img src="https://weblister.co/images/icon_new.png" alt="logo" class="img-gluid coyLogo" width="60">
+									<div class="div1">
+										<img src="uploads/<?php echo $company_logo ?>" alt="<?php echo $company_logo ?>" class="img-gluid coyLogo" width="60">
 									</div>
-									<div class="2">
-										<h4>Fire Fighter</h4>
-										<p>OSABOX LIMITED COMPANY</p>
+									<div class="div2">
+										<h4 class="jobTitle"><?php echo $job_title ?></h4>
+										<p><?php echo strtoupper($company_name) ?></p>
+										<p class="salary">Salary: <?php echo $salary_range ?></p>
 									</div>
 								</div>
 								<div class="jobDesc">
-									<p>Full Time, Remote Job | World Wide</p>
-									<p>Dealine: 3, Jan 2023 - <small>17 Days</small> </p>
-									<!-- <p><button class="btn btn-info">Apply</button></p> -->
+									<p><?php echo $job_type ?>, Remote Job | <span class="text-info"><?php echo $region ?></span></p>
+									<p class="">Dealine: <?php echo date("d F, Y", strtotime($application_deadline));?> </p>
 								</div>
 							</div>
 						</a>
 					</div>
-					<div class="">
-						<a href="">
-							<div class="postedJob mb-3 p-2">
-								<div class="companyLogo">
-									<div class="1">
-										<img src="https://joinratings.com/images/Logo2.png" alt="logo" class="img-gluid coyLogo" width="60">
-									</div>
-									<div class="2">
-										<h4>Specialist consultant in Phamacology</h4>
-										<p>OSABOX LIMITED COMPANY</p>
-									</div>
-								</div>
-								<div class="jobDesc">
-									<p>Full Time, Remote Job | World Wide</p>
-									<p>Dealine: 3, Jan 2023 - <small>17 Days</small> </p>
-									<!-- <p><button class="btn btn-info">Apply</button></p> -->
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="">
-						<a href="">
-							<div class="postedJob mb-3 p-2">
-								<div class="companyLogo">
-									<div class="1">
-										<img src="https://joinratings.com/images/Logo2.png" alt="logo" class="img-gluid coyLogo" width="60">
-									</div>
-									<div class="2">
-										<h4>Specialist consultant in Phamacology</h4>
-										<p>OSABOX LIMITED COMPANY</p>
-									</div>
-								</div>
-								<div class="jobDesc">
-									<p>Full Time, Remote Job | World Wide</p>
-									<p>Dealine: 3, Jan 2023 - <small>17 Days</small> </p>
-									<!-- <p><button class="btn btn-info">Apply</button></p> -->
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="">
-						<a href="">
-							<div class="postedJob mb-3 p-2">
-								<div class="companyLogo">
-									<div class="1">
-										<img src="https://joinratings.com/images/Logo2.png" alt="logo" class="img-gluid coyLogo" width="60">
-									</div>
-									<div class="2">
-										<h4>Specialist consultant in Phamacology</h4>
-										<p>OSABOX LIMITED COMPANY</p>
-									</div>
-								</div>
-								<div class="jobDesc">
-									<p>Full Time, Remote Job | World Wide</p>
-									<p>Dealine: 3, Jan 2023 - <small>17 Days</small> </p>
-									<!-- <p><button class="btn btn-info">Apply</button></p> -->
-								</div>
-							</div>
-						</a>
-					</div>
+					<?}?>
 				</div>
 			</div>
 		</div>
@@ -213,6 +174,7 @@
 				</div>
 			</div>
 		</div>
+		<?php include 'incs/footer.php';?>
   	</body>
   	<script>
 		$(document).ready(function(){
