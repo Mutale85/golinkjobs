@@ -5,7 +5,7 @@ section {
 	margin: 6em auto;
 }
 .sectionOne {
-	margin: 7em auto;
+	margin: 6em auto;
 	padding: 1em;
 }
 .infoTitle {
@@ -32,15 +32,88 @@ section {
 	background-color: var(--stripe);
 }
 
+/*INDEX PAGE*/
+.bgImage {
+   padding: 4em;
+}
+.searchForm input{
+	padding: .5em;
+}
+.searchForm input[type=text]:focus {
+	border: 1px solid #6499cd;
+}
+.searchBtn {
+	background-color: #6499cd;
+	border: 1px solid #6499cd;
+	color: #fff;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+a:active, a:link {
+  text-decoration:none;
+}
+
+.postedJob {
+	display: flex;
+	border: 1px solid #6499cd;
+	color: #000;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 1.0);
+	border-radius: 6px;
+}
+.companyLogo{
+	flex: 2;
+	width: 60%;
+	display: flex;
+	padding-top: 1em;
+}
+.companyLogo .coyLogo {
+	margin-right: 8px;
+}
+.jobDesc {
+	flex: 1;
+	width: 40%;
+}
+.jobTitle {
+	font-size: 1.3em;
+}
+
+@media screen and (max-width: 700px) {
+	.bgImage {
+	   padding: 0em;
+	}
+	.jobcard {
+		margin-left: -1.5em;
+		border-left: none;
+		border-right:1px solid tomato;
+		padding: 0;
+	}
+	.companyLogo img {
+		display: none;
+	}
+	.jobTitle {
+		font-size: 1em;
+	}
+	.div2 p {
+		font-size: .9em;
+		color: #;
+	}
+	.jobDesc p {
+		font-size: .8em;
+	}
+}
+
+/*END OF INDEX PAGE*/
+
 /* FOOTER STYLING ------ */
 
 .site-footer
 {
-  background-color:#26272b;
+  background-color:#6499cd;
   padding:45px 0 20px;
   font-size:15px;
   line-height:24px;
   color:#737373;
+  margin-top: 5em;
 }
 .site-footer hr
 {
@@ -61,11 +134,11 @@ section {
 }
 .site-footer a
 {
-  color:#737373;
+  color:#000;
 }
 .site-footer a:hover
 {
-  color:#3366cc;
+  color:#fff;
   text-decoration:none;
 }
 .footer-links
@@ -79,11 +152,11 @@ section {
 }
 .footer-links a
 {
-  color:#737373
+  color:#000
 }
 .footer-links a:active,.footer-links a:focus,.footer-links a:hover
 {
-  color:#3366cc;
+  color:#fff;
   text-decoration:none;
 }
 .footer-links.inline li
@@ -199,3 +272,78 @@ section {
 }
 
 /* END OF FOOTER STYLING */
+
+/*PAYMENTS PAGE*/
+.receipt {
+  margin: 2em auto;
+  width:50%;
+  background:aliceblue;
+  padding:1.5em;
+  font-family:sans-serif;
+}
+.receipt h1 {
+  text-align:center;
+  color:#d1d1d1;
+  font:uppercase;
+}
+.details {
+  border-top:3px solid tomato;
+  background:#fff;
+  padding: 1.5em;
+}
+.details p {
+  color: ;
+}
+.details h2, .details h3, .details h4, .details p {
+  text-align:center;
+}
+table {
+  width:100%;
+  margin:2em 0;
+}
+td {
+  padding:.5em;
+}
+.receipt_print {
+  margin-top:3em;
+}
+a:active, a:link {
+  text-decoration:none;
+}
+.print {
+  margin-top:2em;
+  border:1px solid #d1d1d1;
+  padding:1em 0.8em;
+  border-radius:4px;
+  color:#000;
+}
+.print:hover {
+  color:mediumseagreen;
+  border:2px solid #d1d1d1;
+}
+@media screen and (max-width:700px) {
+  .receipt {
+    margin: 2em auto;
+    width:100%;
+  }
+}
+/* POST A JOB PAGE */
+.bi-asterisk {
+	font-size: 10px;
+}
+.label {
+	font-weight: 700;
+}
+.form {
+	border: 2px solid #1ecbe1;
+	padding: 3em;
+	width: 60%;
+	margin: 3em auto;
+}
+@media screen and (max-width: 700px) {
+	.form {
+		width: 100%;
+		padding: .5em;
+		border: none;
+	}
+}

@@ -2,27 +2,6 @@
 <html lang="en">
   	<head>
     	<?php include("incs/header.php") ?>
-    	<style type="text/css">
-    		.bi-asterisk {
-    			font-size: 10px;
-    		}
-    		.label {
-    			font-weight: 700;
-    		}
-    		.form {
-    			border: 2px solid #1ecbe1;
-    			padding: 3em;
-    			width: 60%;
-    			margin: 3em auto;
-    		}
-    		@media screen and (max-width: 700px) {
-    			.form {
-    				width: 100%;
-    				padding: .5em;
-    				border: none;
-    			}
-    		}
-    	</style>
     	<link href="summernote/summernote-lite.min.css" rel="stylesheet">
     	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
     	<script src="summernote/summernote-lite.min.js"></script>

@@ -1,4 +1,4 @@
-<footer class="site-footer mt-5 text-white">
+<footer class="site-footer text-white">
   <div class="container mt-5">
     <div class="row">
       <div class="col-sm-12 col-md-6">
@@ -14,7 +14,7 @@
             <li><a href="privacy/guidelines"><i class="bi bi-circle text-info"></i> Listing Guidelines</a></li>
             <li><a href="blog"><i class="bi bi-circle text-info"></i> Blog</a></li>
             <li><a href="job-seeker"><i class="bi bi-circle text-info"></i> Job Seeker</a></li>
-            <!-- <li><a href=""><i class="bi bi-circle text-info"></i> Videos</a></li> -->
+            <li><a href=""><i class="bi bi-circle text-info"></i> About Us</a></li>
         </ul>
       </div>
 

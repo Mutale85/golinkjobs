@@ -6,77 +6,12 @@
 <html lang="en">
   	<head>
     	<?php include("incs/header.php");?>
-    	<style>
-    		.receipt {
-			  margin: 2em auto;
-			  width:50%;
-			  background:aliceblue;
-			  padding:1.5em;
-			  font-family:sans-serif;
-			}
-			.receipt h1 {
-			  text-align:center;
-			  color:#d1d1d1;
-			  font:uppercase;
-			}
-			.details {
-			  border-top:3px solid tomato;
-			  background:#fff;
-			  padding: 1.5em;
-			}
-			.details p {
-			  color: ;
-			}
-			h2, h3, h4, p {
-			  text-align:center;
-			}
-			table {
-			  width:100%;
-			  margin:2em 0;
-			}
-			td {
-			  padding:.5em;
-			}
-			.receipt_print {
-			  margin-top:3em;
-			}
-			a:active, a:link {
-			  text-decoration:none;
-			}
-			.print {
-			  margin-top:2em;
-			  border:1px solid #d1d1d1;
-			  padding:1em 0.8em;
-			  border-radius:4px;
-			  color:#000;
-			}
-			.print:hover {
-			  color:mediumseagreen;
-			  border:2px solid #d1d1d1;
-			}
-			@media screen and (max-width:700px) {
-			  .receipt {
-			    margin: 2em auto;
-			    width:100%;
-			  }
-			}
-			@media print {
-
-			  html, body {
-			    height:100%; 
-			    margin: 0 !important; 
-			    padding: 0 !important;
-			    overflow: hidden;
-			  }
-
-    	</style>
   	</head>
   	<body>
     	<?php include("incs/nav.php")?>
     	<section class="sectionOne">
     		<div class="container">
     			<div class="row">
-    				
     				<div class="col-md-12 text-center">
     				<?php
     					if (isset($_GET['status']) && isset($_GET['amount']) && isset($_GET['customer_email']) && isset($_GET['application_id']) && isset($_GET['tx_ref'])) {
