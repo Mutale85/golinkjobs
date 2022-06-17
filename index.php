@@ -5,62 +5,13 @@
  	</head>
   	<body>
     	<?php include("incs/nav.php")?>
-    	<section class="container-fluid ">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12 mb-3 text-center">
-						<h1 class="infoTitle">Access Remote Jobs</h1>
-						<p class="fs-4 text-secondary">No Spamming - We delivery them direct to you</p>
-						<p>We will never show you jobs that have expired</p>
-					</div>
-					<div class="col-md-12 mb-3">
-						<div class="bgImage text-center">
-							<form method="post" id="searchForm" class="searchForm">
-								<div class="form-group">
-									<div class="input-group">
-										<input type="text" name="keyword" id="keyword" class="form-control" placeholder="Job Title, Company Name, Keyword">
-										<input type="text" name="location" id="location" class="form-control" placeholder="Where ?">
-										<input type="submit" name="submit" id="submit" class="searchBtn" value="Search Jobs">
-									</div>
-								</div>		
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+    	<?php include("search_box.php")?>
 		<section>
 			<div class="container-fluid mb-5">
 
 				<div class="container">
 					<div class="row">
-						<?php
-							$query = $connect->prepare("SELECT * FROM posted_jobs ");
-							$query->execute();
-							foreach($query->fetchAll() as $row){
-								extract($row);
-						?>
-						<div class="col-md-12">
-							<a href="job/<?php echo preg_replace("#[^a-zA-Z_&()0-9-]#", "-", strtolower($job_title)) ?>" class="jobData" id="<?php echo $id?>">
-								<div class="postedJob mb-3 p-2">
-									<div class="companyLogo">
-										<div class="div1">
-											<img src="uploads/<?php echo $company_logo ?>" alt="<?php echo $company_logo ?>" class="img-gluid coyLogo" width="60">
-										</div>
-										<div class="div2">
-											<h4 class="jobTitle"><?php echo $job_title ?></h4>
-											<p><?php echo strtoupper($company_name) ?></p>
-											<p class="salary">Salary: <?php echo $salary_range ?></p>
-										</div>
-									</div>
-									<div class="jobDesc">
-										<p><?php echo $job_type ?>, Remote Job | <span class="text-info"><?php echo $region ?></span></p>
-										<p class="">Dealine: <?php echo date("d F, Y", strtotime($application_deadline));?> </p>
-									</div>
-								</div>
-							</a>
-						</div>
-						<?}?>
+						<div id="postedJobs"></div>
 					</div>
 				</div>
 			</div>
@@ -128,5 +79,55 @@
 	        document.cookie = cName + "=" + cValue + "; " + expires + "; path=/";
 		}
 		
+		function getPostedJobs(){
+			var postedJobs = "getPostedJobs";
+			$.ajax({
+				url:"includes/getPostedJobs",
+				method:"POST",
+				data:{postedJobs:postedJobs},
+				beforeload:function(){
+
+				},
+				success:function(data){
+					$("#postedJobs").html(data);
+				}
+			})
+		}
+		getPostedJobs();
+		
+
+		function searchKeyWord(value){
+			var postedJobs = value;
+			$.ajax({
+				url:"includes/searchKeyWord",
+				method:"POST",
+				data:{postedJobs:postedJobs},
+				beforeload:function(){
+
+				},
+				success:function(data){
+					$("#postedJobs").html(data);
+				}
+			})
+		}
+		
+
+		function getCategoryResults(value){
+			var postedJobs = value;
+			var keyword = document.getElementById('keyword').value;
+			$.ajax({
+				url:"includes/getCategoryResults",
+				method:"POST",
+				data:{postedJobs:postedJobs, keyword:keyword},
+				beforeload:function(){
+
+				},
+				success:function(data){
+					$("#postedJobs").html(data);
+				}
+			})
+		}		
 	</script>
 </html>
+
+

@@ -100,6 +100,9 @@ a:active, a:link {
 	.jobDesc p {
 		font-size: .8em;
 	}
+  .notFound {
+    text-align: center;
+  }
 }
 
 /*END OF INDEX PAGE*/
