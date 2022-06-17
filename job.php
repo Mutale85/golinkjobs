@@ -44,7 +44,7 @@
 							<div class="card ">
 								<div class="card-header card-info">
 									<h2><?php echo $job_title ?></h2>
-									<p><?php echo $job_type ?>, Remote Job | <span class="text-info"><?php echo $region ?></span></p>
+									<p><?php echo $job_type ?> | <span class="text-primary"><?php echo $job_nature?></span> | <span class="text-info"><?php echo $region ?></span></p>
 									<p class="">Dealine: <?php echo date("d F, Y", strtotime($application_deadline));?> </p>
 									<p class="text-bold">Posted By: <?php echo strtoupper($company_name) ?></p>
 								</div>

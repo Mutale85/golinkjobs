@@ -87,17 +87,30 @@
 		    							<label class="mb-2 label">Job Description <i class="bi bi-asterisk"></i></label>
 		    							<textarea class="form-control" name="job_description" id="job_description"></textarea>
 		    						</div>
-		    						<div class="form-group col-md-12 mb-5">
+		    						<div class="form-group col-md-6 mb-5">
 		    							<label class="mb-2 label">Job Type ? <i class="bi bi-asterisk"></i></label>
 		    							<br>
 		    							<label>
 											<input class="form-check-input" type="radio" name="job_type" id="job_type" required value="Full Time"> Full Time
-										</label>
+										</label><br>
 										<label>
 											<input class="form-check-input" type="radio" name="job_type" id="job_type" required value="Part Time"> Part Time
-										</label>
+										</label><br>
 										<label>
 											<input class="form-check-input" type="radio" name="job_type" id="job_type" required value="Contract"> Contract
+										</label><br>
+										<label>
+											<input class="form-check-input" type="radio" name="job_type" id="job_type" required value="Internship"> Internship
+										</label>
+		    						</div>
+		    						<div class="form-group col-md-6 mb-5">
+		    							<label class="mb-2 label">Is Job Remote ? <i class="bi bi-asterisk"></i></label>
+		    							<br>
+		    							<label>
+											<input class="form-check-input" type="radio" name="job_nature" id="job_nature" required value="Remote"> Yes
+										</label><br>
+										<label>
+											<input class="form-check-input" type="radio" name="job_nature" id="job_nature" required value="Physical Job"> No
 										</label>
 		    						</div>
 		    						<div class="form-group col-md-6 mb-5">
