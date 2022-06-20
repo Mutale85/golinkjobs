@@ -24,8 +24,8 @@
 									
 										extract($row);
 							?>
-										<div class="col-md- mb-4">
-											
+										<div class="col-md-8 mb-4">
+											<?php echo $job_category;?>
 										</div>
 							<?php
 									}

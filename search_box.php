@@ -7,7 +7,7 @@
                 <p>We will never show you jobs that have expired</p>
             </div>
             <div class="col-md-12 mb-3">
-                <div class="bgImage text-center">
+                <div class="postedJobs text-center">
                     <form method="get" id="searchForm" action="search" class="searchForm">
                         <div class="form-group">
                             <div class="input-group">

@@ -2,7 +2,7 @@ body {
 	font-family: proxima-nova,Sans-serif;
 }
 section {
-	margin: 6em auto;
+	margin: 10em auto;
 }
 .sectionOne {
 	margin: 6em auto;
@@ -21,18 +21,22 @@ section {
 	text-align: center;
 }
 .sectionTwo {
-	--stripe: #cfd8dc;
-	--bg: #e1e1e1;
+  --stripe: #cfd8dc;
+  --bg: #e1e1e1;
 
-	background: linear-gradient(135deg, var(--bg) 25%, transparent 25%) -50px 0,
-	linear-gradient(225deg, var(--bg) 25%, transparent 25%) -50px 0,
-	linear-gradient(315deg, var(--bg) 25%, transparent 25%),
-	linear-gradient(45deg, var(--bg) 25%, transparent 25%);
-	background-size: 100px 100px;
-	background-color: var(--stripe);
+  background: linear-gradient(135deg, var(--bg) 25%, transparent 25%) -50px 0,
+  linear-gradient(225deg, var(--bg) 25%, transparent 25%) -50px 0,
+  linear-gradient(315deg, var(--bg) 25%, transparent 25%),
+  linear-gradient(45deg, var(--bg) 25%, transparent 25%);
+  background-size: 100px 100px;
+  background-color: var(--stripe);
 }
 
 /*INDEX PAGE*/
+.postedJobs {
+  width: 80%;
+  margin: 1em auto;
+}
 .bgImage {
    padding: 4em;
 }
@@ -40,11 +44,11 @@ section {
 	padding: .5em;
 }
 .searchForm input[type=text]:focus {
-	border: 1px solid #6499cd;
+	border: 1px solid lightgrey;
 }
 .searchBtn {
-	background-color: #6499cd;
-	border: 1px solid #6499cd;
+	background-color: lightgrey;
+	border: 1px solid lightgrey;
 	color: #fff;
 	border-top-right-radius: 3px;
 	border-bottom-right-radius: 3px;
@@ -55,7 +59,7 @@ a:active, a:link {
 
 .postedJob {
 	display: flex;
-	border: 1px solid #6499cd;
+	border: 1px solid lightgrey;
 	color: #000;
 	box-shadow: 0 0 5px rgba(0, 0, 0, 1.0);
 	border-radius: 6px;
@@ -76,8 +80,53 @@ a:active, a:link {
 .jobTitle {
 	font-size: 1.3em;
 }
+#jobForm input[type=text], #jobForm input[type=email], #jobForm input[type=file], #jobForm input[type=url], #jobForm select {
+  height: 3em;
+}
+.forSmall {
+  display: none;
+}
 
-@media screen and (max-width: 700px) {
+.forSmall select{
+    width: 100%;
+    padding: 8px;
+    height: 55px;
+    border: 3px solid;
+}
+
+:root {
+  --clr-primary: #651fff;
+  --clr-gray: #37474f;
+  --clr-gray-light: #b0bec5;
+}
+
+body {
+  color: var(--clr-gray);
+}
+.modal.left .modal-dialog,
+.modal.right .modal-dialog {
+  position: fixed;
+  margin: auto;
+  width: 35%;
+  height: 100%;
+  -webkit-transform: translate3d(0%, 0, 0);
+      -ms-transform: translate3d(0%, 0, 0);
+       -o-transform: translate3d(0%, 0, 0);
+          transform: translate3d(0%, 0, 0);
+}
+
+.modal.left .modal-content,
+.modal.right .modal-content {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.modal.left .modal-body,
+.modal.right .modal-body {
+  padding: 15px 15px 80px;
+}
+
+@media screen and (max-width: 768px) {
 	.bgImage {
 	   padding: 0em;
 	}
@@ -103,6 +152,23 @@ a:active, a:link {
   .notFound {
     text-align: center;
   }
+  .postedJobs {
+    width: 100%;
+    margin: 1em auto;
+  }
+  .forSmall {
+    display: block;
+  }
+  .forBig {
+    display: none;
+  }
+
+  .modal.left .modal-dialog,
+  .modal.right .modal-dialog {
+    position: fixed;
+    margin: auto;
+    width: 95%;
+  }
 }
 
 /*END OF INDEX PAGE*/
@@ -111,7 +177,7 @@ a:active, a:link {
 
 .site-footer
 {
-  background-color:#6499cd;
+  background-color:lightgrey;
   padding:45px 0 20px;
   font-size:15px;
   line-height:24px;
@@ -129,7 +195,7 @@ a:active, a:link {
 }
 .site-footer h6
 {
-  color:#fff;
+  color:#6499cd;
   font-size:16px;
   text-transform:uppercase;
   margin-top:5px;
@@ -141,7 +207,7 @@ a:active, a:link {
 }
 .site-footer a:hover
 {
-  color:#fff;
+  color:#6499cd;
   text-decoration:none;
 }
 .footer-links
@@ -159,7 +225,7 @@ a:active, a:link {
 }
 .footer-links a:active,.footer-links a:focus,.footer-links a:hover
 {
-  color:#fff;
+  color:#6499cd;
   text-decoration:none;
 }
 .footer-links.inline li

@@ -2,11 +2,12 @@
     include("db.php");
     if(isset($_POST['postedJobs'])){
 
-        $query = $connect->prepare("SELECT * FROM posted_jobs ");
+        $query = $connect->prepare("SELECT * FROM posted_jobs ORDER BY date_posted DESC ");
         $query->execute();
         foreach($query->fetchAll() as $row){
             extract($row);
 ?>
+    
         <div class="col-md-12">
             <a href="job/<?php echo preg_replace("#[^a-zA-Z_&()0-9-]#", "-", strtolower($job_title)) ?>" class="jobData" id="<?php echo $id?>">
                 <div class="postedJob mb-3 p-2">
@@ -22,7 +23,8 @@
                     </div>
                     <div class="jobDesc">
                         <p><?php echo $job_type ?> | <span class="text-primary"><?php echo $job_nature?></span> | <span class="text-info"><?php echo $region ?></span></p>
-                        <p class="">Deadline: <?php echo date("d F, Y", strtotime($application_deadline));?> </p>
+                        <p class="text-primary">Posted: <?php echo ucwords(time_ago_check($date_posted));?> </p>
+                        <p class="btn btn-warning">Deadline: <?php echo date("d F, Y", strtotime($application_deadline));?> </p>
                     </div>
                 </div>
             </a>

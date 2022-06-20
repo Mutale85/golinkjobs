@@ -14,7 +14,7 @@
 			      	<a class="nav-link " href="the-blog" title="theblog">The Blog</a>
 			    </li>
 			    <li class="nav-item">
-			      	<a class="nav-link " href="job-seeker" title="job-seeker">Job Seeker</a>
+			      	<a class="nav-link " href="looking" title="job-seeker">Job Seeker</a>
 			    </li>
 	    		<li class="nav-item">
 	      			<a class="nav-link " href="post-a-job" title="post-a-job">Post a Job</a>
