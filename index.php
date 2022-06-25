@@ -14,14 +14,36 @@
 					<div id="postedJobs" class="postedJobs"><div class="spinner-border "></div>Please Wait....</div>
 				</div>
 				<div class="row">
+					<div class="col-md-12 text-center">
+						<img src="images/Pic1.png" class="img-fluid mb-3" alt="leg">
+						<!-- <button class="btn btn-outline-success">Click if you Send me Job Alerts</button> -->
+					</div>
 					<div class="col-md-12">
-						<img src="images/Pic1.png" class="img-fluid" alt="leg">
+						<div class="forms">
+							<h4 class="mb-4">Get Job links alerts straight in inbox</h4>
+							<form method="post" id="subscribersForm">
+								<div class="form-group mb-3">
+									<label class="mb-2">Your Name</label>
+									<div class="input-group">
+										<span class="input-group-text">
+											<i class="bi bi-person"></i>
+										</span>
+										<input type="text" name="subscriber_name" id="subscriber_name" class="form-control" required placeholder="Your Name">
+										<span class="input-group-text">
+											@
+										</span>
+										<input type="email" name="subscriber_email" id="subscriber_email" class="form-control" required placeholder="Your Email">
+									</div>
+								</div>
+								<button class="btn btn-outline-primary" type="submit" id="subscriberBtn">Send me Job Alerts </button>
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 		<?php include 'incs/footer.php';?>
-		<div class="modal" tabindex="-1" role="dialog" id="partnerModal">
+		<!-- <div class="modal" tabindex="-1" role="dialog" id="partnerModal">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content modal-lg">
 					<div class="modal-header">
@@ -29,34 +51,14 @@
 						<button type="button" class="btn-close text-danger" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
-						<form method="post" id="partnersForm">
-							<div class="form-group mb-3">
-								<label class="mb-2">Your Name</label>
-								<div class="input-group">
-									<span class="input-group-text">
-										<i class="bi bi-person"></i>
-									</span>
-									<input type="text" name="your_names" id="your_names" class="form-control" required placeholder="Your Names">
-								</div>
-							</div>
-							<div class="form-group mb-3">
-								<label class="mb-2">Your Email</label>
-								<div class="input-group">
-									<span class="input-group-text">
-										@
-									</span>
-									<input type="email" name="email" id="email" class="form-control" required placeholder="Your Email">
-								</div>
-							</div>
-							<button class="btn btn-outline-success">Send me Job Emails </button>
-						</form>
+						
 					</div>
 					<div class="modal-footer d-flex justify-content-between">
 						<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
   	</body>
 	<script type="text/javascript" src="js/main.js"></script>
 	<script>
@@ -76,6 +78,25 @@
 				success:function(data){
 					$("#postedJobs").html(data);
 				}
+			})
+		})
+
+		$(function(){
+			$("#subscribersForm").submit(function(e){
+				e.preventDefault();
+				$.ajax({
+					url:"includes/subscribe",
+					method:"POST",
+					data:$(this).serialize(),
+					beforeload:function(){
+						$("#subscriberBtn").html("<span class='spinner-border'></span> Please Wait ...");
+					},
+					success:function(data){
+						$("#subscriberBtn").html('Send me Job Alerts');
+						$("#subscribersForm")[0].reset();
+						successNow(data);
+					}
+				})
 			})
 		})
 	</script>

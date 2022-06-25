@@ -39,12 +39,20 @@
 		                <title>Osabox - Registration</title>
 		                <meta name="description" content="Reset Password Email Template.">
 		                <style type="text/css">
-		                    a:hover {text-decoration: none !important;}
+		                    a:active, a:link {text-decoration: none !important;}
+		                    img.imgLogo {
+		                    	margin:1em auto;
+		                    }
+		                    h3 {
+		                    	margin:1em auto;
+		                    }
 		                </style>
 		            </head>
 		            <body>
+		            	<p align="center"><img src="http://localhost/golinkjobs.com/images/Gologo.png" class="imgLogo" width="100" alt="Gologo"></p>
+		            	<h3 align="center">Hello '.$firstname.'</h3>
 		            	<p>Thank you for adding your CV. Please verify your email </p>
-		            	<h3><a href="http://localhost/golinkjobs.com/cv-verify?code='.$code.'&d='.base64_encode($email).'&i='.$id.'"> Verify Email</a></h3>
+		            	<h3><a href="http://localhost/golinkjobs.com/verify?code='.$code.'&d='.base64_encode($email).'&i='.$id.'"> Verify Email</a></h3>
 		            	<p>You can also copy and paste this link to your browser: href="http://localhost/golinkjobs.com/verify?code='.$code.'&d='.base64_encode($email).'&i='.$id.'"</p>
 
 		            </body>
