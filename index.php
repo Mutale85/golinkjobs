@@ -10,7 +10,7 @@
 		<div class="container-fluid">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-12"><h3 id="titleLabel" class="text-center text-secondary"></h3></div>
+					<div class="col-md-12"><h2 id="titleLabel" class="text-center text-secondary">Latest Jobs</h2></div>
 					<div id="postedJobs" class="postedJobs"><div class="spinner-border "></div>Please Wait....</div>
 				</div>
 				<div class="row">
@@ -20,22 +20,30 @@
 					</div>
 					<div class="col-md-12">
 						<div class="forms">
-							<h4 class="mb-4">Get Job links alerts straight in inbox</h4>
+							<h3 class="mb-4 text-center">Get Job links alerts straight in inbox</h3>
 							<form method="post" id="subscribersForm">
-								<div class="form-group mb-3">
-									<label class="mb-2">Your Name</label>
-									<div class="input-group">
-										<span class="input-group-text">
-											<i class="bi bi-person"></i>
-										</span>
-										<input type="text" name="subscriber_name" id="subscriber_name" class="form-control" required placeholder="Your Name">
-										<span class="input-group-text">
-											@
-										</span>
-										<input type="email" name="subscriber_email" id="subscriber_email" class="form-control" required placeholder="Your Email">
+								<div class="row">
+									<div class="form-group col-md-4 mb-3">
+										<div class="input-group">
+											<span class="input-group-text">
+												<i class="bi bi-person"></i>
+											</span>
+											<input type="text" name="subscriber_name" id="subscriber_name" class="form-control" required placeholder="Your Name">
+										</div>
+									</div>
+									<div class="form-group col-md-4 mb-3">
+										<div class="input-group">
+											<span class="input-group-text">
+												@
+											</span>
+											<input type="email" name="subscriber_email" id="subscriber_email" class="form-control" required placeholder="Your Email">
+										</div>
+									</div>
+									<div class="form-group col-md-4 mb-3">
+										<button class="btn btn-outline-primary" type="submit" id="subscriberBtn">Send me Job Alerts </button>
+										
 									</div>
 								</div>
-								<button class="btn btn-outline-primary" type="submit" id="subscriberBtn">Send me Job Alerts </button>
 							</form>
 						</div>
 					</div>

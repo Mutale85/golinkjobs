@@ -1,4 +1,4 @@
-<section class="container-fluid " id="parallax">
+<section class="container-fluid " id="parallax" data-image-width="1920" data-image-height="1080">
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
