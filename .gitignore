@@ -1,3 +1,5 @@
 /PHPMailer
 /summernote
 /int17
+.env
+conf.php

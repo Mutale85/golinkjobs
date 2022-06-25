@@ -15,7 +15,7 @@
     				
     				<div class="col-md-12">
     					<div class="form">
-	    					<h2 class="mb-5 text-center">Post A Job For $2.99 / Day</h2>
+	    					<h2 class="mb-5 text-center">Post A Job For $3.99 / Day</h2>
 	    					<hr>
 	    					<form method="post" id="jobForm" enctype="multipart/form-data">
 	    						<div class="row">
@@ -27,16 +27,36 @@
 		    							<label class="mb-2 label">Job Category <i class="bi bi-asterisk"></i></label>
 		    							<select class="form-control" name="job_category" id="job_catgory" required>
 		    								<option value="">Select</option>
-		    								<option value="Agriculture, Food, and Natural Resources">Agriculture, Food, and Natural Resources</option>
+		    								<option value="Accounting And Finance">Accounting And Finance</option>
+		    								<option value="Administrative">Administrative</option>
+		    								<option value="Administrative Assistant">Administrative Assistant</option>
+		    								<option value="Agriculture and Natural Resources">Agriculture and Natural Resources</option>
 		    								<option value="Architecture and Construction">Architecture and Construction</option>
-		    								<option value="Arts, Audio/Video Technology, and Communication">Arts, Audio/Video Technology, and Communication</option>
-		    								<option value="Business and Finance">Business and Finance</option>
-		    								<option value="Education and Training">Education and Training</option>
-		    								<option value="Health Science">Health Science</option>
+		    								<option value="Automotive Industry">Automotive Industry</option>
+		    								<option value="Aviation Industry">Aviation Industry</option>
+		    								<option value="Business Development">Business Development</option>
+		    								<option value="Business Administration">Business Administration</option>
+		    								<option value="Communications">Communications</option>
+		    								<option value="Community and Social Services">Community and Social Services</option>
+		    								<option value="Consultancy">Consultancy</option>
+		    								<option value="Customer Service">Customer Service</option>
+		    								<option value="Education">Education</option>
+		    								<option value="Engineering">Engineering</option>
+		    								<option value="Fire and Safety">Fire and Safety</option>
+		    								<option value="Health Care Services">Health Care Services</option>
+		    								<option value="Human Resource">Human Resource</option>
 		    								<option value="Information Technology">Information Technology </option>
-		    								<option value="Marketing">Marketing</option>
-		    								<option value="Writing">Writing</option>
-		    								<option value="Other">Other</option>
+		    								<option value="Legal Services">Legal Services</option>
+		    								<option value="Marketing and Sales">Marketing and Sales</option>
+		    								<option value="Media and Arts">Media and Arts</option>
+		    								<option value="Physical Trainer">Physical Trainer</option>
+		    								<option value="Project Management">Project Management</option>
+		    								<option value="Product Management">Product Management</option>
+		    								<option value="Quality Assurance">Quality Assurance</option>
+		    								<option value="Supply and Procurement">Supply and Procurement</option>
+		    								<option value="Transport and Logistics">Transport and Logistics</option>
+		    								<option value="Writing and Editing">Writing and Editing</option>
+		    								<option value="Other Fields">Other Fields</option>
 		    							</select>
 		    						</div>
 		    						<div class="form-group col-md-6 mb-5">
@@ -126,6 +146,11 @@
 		    						<div class="col-md-12 mt-3 border-bottom mb-5"></div>
 		    						<h3 class="mt-4 mb-5 text-secondary">Applicants would love to know more about you</h3>
 		    						<div class="form-group col-md-12 mb-5">
+		    							<label class="mb-2 label">Your Email <i class="bi bi-asterisk"></i></label>
+		    							<input type="email" name="email" id="email" class="form-control" required>
+		    							<em>This mail will be used for billing </em>
+		    						</div>
+		    						<div class="form-group col-md-12 mb-5">
 		    							<label class="mb-2 label">Company Name <i class="bi bi-asterisk"></i></label>
 		    							<input type="text" name="company_name" id="company_name" class="form-control" required>
 		    						</div>
@@ -137,17 +162,13 @@
 		    							<label class="mb-2 label">Company Logo <i class="bi bi-asterisk"></i></label>
 		    							<input type="file" name="company_logo" id="company_logo" class="form-control" required>
 		    						</div>
-		    						<div class="form-group col-md-6 mb-5">
+		    						<div class="form-group col-md-12 mb-5">
 		    							<label class="mb-2 label">Website </label>
 		    							<input type="url" name="company_website" id="company_website" class="form-control">
 		    						</div>
-		    						<div class="form-group col-md-6 mb-5">
-		    							<label class="mb-2 label">Your Email <i class="bi bi-asterisk"></i></label>
-		    							<input type="email" name="email" id="email" class="form-control" required>
-		    							<em>This mail will be used for billing </em>
-		    						</div>
+		    						
 		    						<div class="col-md-12">
-		    							<button class="btn btn success_btn" id="submitBtn">Submit Job For <span id="amount_calc">$2.99 / Day</span> </button>
+		    							<button class="btn btn success_btn" id="submitBtn">Submit Job For <span id="amount_calc">$3.99 / Day</span> </button>
 		    						</div>
 		    					</div>
 	    					</form>
@@ -171,7 +192,7 @@
 
 			$('#job_description').summernote({
 		        placeholder: 'Please do not forget to add your job description',
-		        height: 200,
+		        height: 500,
 		        toolbar: [
 		          ['style', ['style']],
 		          ['font', ['bold', 'underline', 'clear']],
@@ -196,7 +217,7 @@
 				var days = Math.ceil(difference / (1000 * 3600 * 24));
 				if (deadline !== '') {
 					document.getElementById('estimated_period').value = days;
-					var amount = roundToTwo(days * 2.99);
+					var amount = roundToTwo(days * 3.99);
 					amount_calc.innerHTML = '$'+ amount + ' For '+ days + ' Days';
 				}else{
 					document.getElementById('estimated_period').value = '';
@@ -230,7 +251,7 @@
 							successNow(data);
 							$("#jobForm")[0].reset();
 							$('#job_description').summernote('reset');
-							$("#submitBtn").html('Submit Job For <span id="amount_calc">$2.99 / Day</span>');
+							$("#submitBtn").html('Submit Job For <span id="amount_calc">$3.99 / Day</span>');
 							setTimeout(function(){
 								window.location = 'post-a-job-final';
 							}, 1500);

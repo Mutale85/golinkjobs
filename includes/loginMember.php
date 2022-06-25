@@ -18,20 +18,19 @@
 			exit();
 		}
 
-		$query = $connect->prepare("SELECT * FROM members WHERE email = ? ");
+		$query = $connect->prepare("SELECT * FROM register WHERE email = ? ");
 		$query->execute(array($email));
 		if ($query->rowCount() > 0) {
 			foreach ($query->fetchAll() as $row) {
-				if($row['activate'] == 1){
+				if($row['verified'] == 1){
 					if (password_verify($password, $row['password'])) {
-						$_SESSION['user_email_axis'] 	= $row['email'];
+						$_SESSION['user_email_job_portal'] = $row['email'];
+						$_SESSION['username']		= $row['username'];
 					    $_SESSION['user_id'] 		= $row['id'];
-					    $_SESSION['fullnames'] 		= $row['fullnames'];
-					    $_SESSION['parent_id'] 		= $row['parent_id'];
 					    $password 					= $row['password'];
-					    $parent_id 					= $row['parent_id'];
+
 					    
-					    setcookie("newLoggedIn", base64_encode($_SESSION['user_email_axis']. password_hash($_SESSION['user_email_axis'], PASSWORD_DEFAULT)), time()+60*60*24*30, '/');
+					    setcookie("userPortalLogin", base64_encode($_SESSION['user_email_job_portal']. password_hash($_SESSION['user_email_job_portal'], PASSWORD_DEFAULT)), time()+60*60*24*30, '/');
 					    
 					    echo "Redirecting you in 1 Second";
 

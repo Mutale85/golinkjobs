@@ -7,9 +7,10 @@
     	<?php include("incs/nav.php")?>
     	<?php include("search_box.php")?>
 		<section>
-			<div class="container-fluid mb-5">
+			<div class="container-fluid">
 				<div class="container">
 					<div class="row">
+						<div class="col-md-12"><h3 id="titleLabel" class="text-center text-secondary"></h3></div>
 						<div id="postedJobs" class="postedJobs"><div class="spinner-border "></div>Please Wait....</div>
 					</div>
 				</div>
@@ -52,10 +53,28 @@
 				</div>
 			</div>
 		</div>
-	
-		/dev/disk1
   	</body>
 	<script type="text/javascript" src="js/main.js"></script>
+	<script>
+		var titleLabel = document.getElementById('titleLabel');
+
+		$(document).on("click", ".job_btn", function(e){
+			e.preventDefault();
+			var fetchJobsByCategory = $(this).attr("href");
+			titleLabel.innerText =  `${fetchJobsByCategory} Jobs`;
+			$.ajax({
+				url:"includes/fetchJobsByCategory",
+				method:"POST",
+				data:{fetchJobsByCategory:fetchJobsByCategory},
+				beforeload:function(){
+
+				},
+				success:function(data){
+					$("#postedJobs").html(data);
+				}
+			})
+		})
+	</script>
 </html>
 
 

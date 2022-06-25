@@ -35,7 +35,7 @@ section {
 /*INDEX PAGE*/
 .postedJobs {
   width: 80%;
-  margin: 1em auto;
+  margin: .5em auto;
 }
 .bgImage {
    padding: 4em;
@@ -61,8 +61,9 @@ a:active, a:link {
 	display: flex;
 	border: 1px solid lightgrey;
 	color: #000;
-	box-shadow: 0 0 5px rgba(0, 0, 0, 1.0);
-	border-radius: 6px;
+	/*box-shadow: 0 0 5px rgba(0, 0, 0, 1.0);*/
+	border-radius: 2px;
+  background-color: lightgrey;
 }
 .companyLogo{
 	flex: 2;
@@ -73,9 +74,14 @@ a:active, a:link {
 .companyLogo .coyLogo {
 	margin-right: 8px;
 }
+.div1 {
+  /*border-right: 2px solid #ddd;*/
+  margin-right: .5em;
+}
 .jobDesc {
 	flex: 1;
 	width: 40%;
+  margin-top: 3px;
 }
 .jobTitle {
 	font-size: 1.3em;
@@ -107,7 +113,7 @@ body {
 .modal.right .modal-dialog {
   position: fixed;
   margin: auto;
-  width: 35%;
+  width: 55%;
   height: 100%;
   -webkit-transform: translate3d(0%, 0, 0);
       -ms-transform: translate3d(0%, 0, 0);
@@ -125,7 +131,40 @@ body {
 .modal.right .modal-body {
   padding: 15px 15px 80px;
 }
-
+#confirmationForm {
+  display: none;
+}
+#progressBar {
+  display: none;
+}
+.cvDiv {
+  width: 80%;
+  margin: 1em auto;
+}
+#signupForm, #loginForm {
+  width: 50%;
+  margin: 2em auto;
+  border: 2px solid #ddd;
+  padding: 3em;
+  border-radius: .5em;
+}
+.Social a i{
+  font-size: 1.5em;
+}
+ul.list_block {
+  list-style: none;
+}
+ul.list_block li {
+  float: right;
+  margin: .5em;
+}
+.jobDesc {
+  padding-top: .5em;
+}
+.jobDesc p {
+  color: grey;
+}
+/*======================================SMALL SCREEN=============*/
 @media screen and (max-width: 768px) {
 	.bgImage {
 	   padding: 0em;
@@ -139,13 +178,16 @@ body {
 	.companyLogo img {
 		display: none;
 	}
-	.jobTitle {
+	a p.jobTitle {
 		font-size: 1em;
 	}
 	.div2 p {
 		font-size: .9em;
 		color: #;
 	}
+  .div1 {
+    display: none;
+  }
 	.jobDesc p {
 		font-size: .8em;
 	}
@@ -168,6 +210,21 @@ body {
     position: fixed;
     margin: auto;
     width: 95%;
+  }
+  div#imgBig.d-flex.justify-content-between.mb-5 {
+    display: none !important;
+  }
+  .cvDiv {
+    width: 100%;
+    /*margin: 1em auto;*/
+  }
+
+  #signupForm, #loginForm {
+    width: 100%;
+    margin: 0;
+    border: 2px solid #ddd;
+    padding: 1em;
+    border-radius: none
   }
 }
 
@@ -403,16 +460,24 @@ a:active, a:link {
 .label {
 	font-weight: 700;
 }
-.form {
-	border: 2px solid #1ecbe1;
+.forms {
+  border: 1px solid #6c757d;
 	padding: 3em;
-	width: 60%;
+	width: 70%;
 	margin: 3em auto;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
 }
-@media screen and (max-width: 700px) {
-	.form {
+@media screen and (max-width: 768px) {
+	.forms {
 		width: 100%;
-		padding: .5em;
+		padding: 1em;
 		border: none;
+    box-shadow: none;
 	}
+  .forms .success_btn {
+    width: 100%;
+  }
+  #supportMenu {
+    display: none;
+  }
 }

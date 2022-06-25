@@ -15,6 +15,7 @@
     				<div class="col-md-12 text-center">
     				<?php
     					if (isset($_GET['status']) && isset($_GET['amount']) && isset($_GET['customer_email']) && isset($_GET['application_id']) && isset($_GET['tx_ref'])) {
+    						include 'conf.php';
 			    			$postedJobID = $_GET['application_id'];
 			    			$userMail = $_GET['customer_email'];
 			    			$totalAmount = $_GET['amount'];
@@ -22,32 +23,32 @@
 			    			$tx_ref = $_GET['tx_ref'];
 			    			$transaction_id = $_GET['transaction_id'];
 			    			$customer_name = $_GET['customer_name'];
+
 			    			if ($status == 'successful') {
 			    				// update the database on the payment
 			    				$posted = 1;
 			    				$currency = 'USD';
-			    				$sql = $connect->prepare("UPDATE posted_jobs SET email = ?,currency = ?, amount = ?, ref_number = ?, status = ?, transaction_id = ?, posted = ? WHERE id = ? ");
-			    				$ex = $sql->execute(array($userMail, $currency, $totalAmount, $tx_ref, $status, $transaction_id, $posted, $postedJobID));
+			    				$sql = $connect->prepare("UPDATE posted_jobs SET currency = ?, amount = ?, ref_number = ?, status = ?, transaction_id = ?, posted = ? WHERE id = ? AND company_id = ? ");
+			    				$ex = $sql->execute([$currency, $totalAmount, $tx_ref, $status, $transaction_id, $posted, $postedJobID, $_SESSION['user_id']]);
 			    				if ($ex) {
 			    					// send email to admin that payment has been made and advert is going online
 			    					
 									require 'PHPMailer/src/Exception.php';
 									require 'PHPMailer/src/PHPMailer.php';
 									require 'PHPMailer/src/SMTP.php';
-									$mymail = 'mutamuls@gmail.com';
-									$firstname = "Mutale";
+									
 									$message = 'New Payment by '. $customer_name;
 
 									$mail = new PHPMailer();
 						    		$mail->Host = "smtp.zoho.com";
 						    		$mail->isSMTP();
 						    		$mail->SMTPAuth = true;
-						    		$mail->Username = "mulenga@weblister.co";
-						    		$mail->Password = "mutale@85";
+						    		$mail->Username = SELF_EMAIL;
+						    		$mail->Password = SELF_PASS;
 						    		$mail->SMTPSecure = "ssl";//TLS
 						    		$mail->Port = 465; //TLS port= 587
-						    		$mail->addAddress($mymail, $firstname); //$inst_admin_email;
-						    		$mail-> setFrom("mulenga@weblister.co", 'Payments');
+						    		$mail->addAddress(MY_MAIL, FNAME); //$inst_admin_email;
+						    		$mail-> setFrom(SELF_EMAIL, 'Payments');
 						    		$mail-> Subject = "New Payment On Access Remote Jobs";
 						    		$mail->isHTML(TRUE);
 						    		// $mail->SMTPDebug = 2;
@@ -62,9 +63,9 @@
 			    			
 		    		?>
     					<div class="receipt">
-						  	<h1>AccessRemoteJobs</h1>
+						  	<h1>Go Link Jobs</h1>
 						  	<div class="details">
-							    <h3>Receipt From Access Remote Jobs</h3>
+							    <h3>Receipt From Go Link Jobs</h3>
 							    <p>Your payment was successul and has been received by Acess Remote Jobs </p>
 							    <h2>USD <?php echo $totalAmount?></h2>
 							    <hr>
@@ -89,7 +90,7 @@
 							    </table>
 						    	<p><?php echo date("d F, Y")?></p>
 						    	<hr>
-						    	<p> If you have any issues with the payment, contact accessremotejobs at mulenga@weblister.co</p>
+						    	<p> If you have any issues with the payment, contact Go Link Jobs at mulenga@weblister.co</p>
 							    <div class="receipt_print">
 							      	<!-- <button class="print" onclick="window.print()">Print Receipt</button> -->
 							      	<p>Copy of receipt has been maild to your email: <?php echo $userMail ?></p>

@@ -82,16 +82,53 @@
 		}
 		return $url;
 	}
-	function getParentId($connect, $email){
-		$output = "";
-		$query = $connect->prepare("SELECT * FROM members WHERE email = ? ");
-		$query->execute(array($email));
+	
+	function getCompanyLogo($connect, $company_id){
+		$output = '';
+		$query = $connect->prepare("SELECT * FROM company WHERE company_id = ?");
+		$query->execute([$company_id]);
 		$row = $query->fetch();
-		if ($row) {
+		if($row){
 			extract($row);
-			$output = $parent_id;
+		
+			$output = '<img src="uploads/'.$company_logo.'" alt="'.$company_logo.'" class="img-gluid coyLogo" width="60">';
 		}
 		return $output;
 	}
 
+	function getCompanyName($connect, $company_id){
+		$output = '';
+		$query = $connect->prepare("SELECT * FROM company WHERE company_id = ?");
+		$query->execute([$company_id]);
+		$row = $query->fetch();
+		if($row){
+			extract($row);
+			$output = $company_name;
+		}
+		return $output;
+	}
+
+	function getUserName($connect, $company_id){
+		$output = '';
+		$query = $connect->prepare("SELECT * FROM register WHERE parent_id = ?");
+		$query->execute([$company_id]);
+		$row = $query->fetch();
+		extract($row);
+		return $username;
+	}
+
+	function countJobClick($connect, $company_id, $job_id){
+		$output = '';
+		$check = $connect->prepare("SELECT * FROM job_views WHERE company_id = ? AND job_id = ? ");
+        $check->execute([$company_id, $job_id]);
+        if ($check->rowCount() > 0) {
+        	$row = $check->fetch();
+        	if ($row) {
+        		$output = $row['clicks'];
+        	}
+        }else{
+        	$output = 0;
+        }
+        return $output;
+	}
 ?>

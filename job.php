@@ -33,6 +33,7 @@
 				})
 			}
 			getSearchResult();
+			// count how many times the job has been opened
 		</script>
   	</body>
 </html>
