@@ -38,7 +38,7 @@
                 }
             }else{
                echo "
-                    <div class='notFound'><p><span class='text-info'>".$job_category."</span> returned no results</p></div>
+                    <div class='notFound text-center forms'><h4>Search returned no results</h4></div>
                 "; 
             }
 
@@ -76,7 +76,7 @@
                     }
             }else{
                 echo "
-                    <div class='notFound'><p>Search returned no result</p></div>
+                    <div class='notFound text-center forms'><h4>Search returned no result</h4></div>
                 ";
             }
         }else if ($job_category == "" && $keyword != "" ) {
@@ -113,7 +113,7 @@
                     }
             }else{
                 echo "
-                    <div class='notFound'><p>Search returned no result</p></div>
+                    <div class='notFound text-center forms'><h4>Search returned no result</h4></div>
                 ";
             }
         }else if ($job_category == "" && $keyword == "" ) {
@@ -150,7 +150,7 @@
                     }
             }else{
                 echo "
-                    <div class='notFound'><p>Search returned no result</p></div>
+                    <div class='notFound text-center forms'><h4>Search returned no result</h4></div>
                 ";
             }
         }

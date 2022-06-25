@@ -35,7 +35,7 @@
             }
         }else{
            echo "
-                <div class='notFound text-center'><h4><span class='text-info'>".$job_category."</span> returned no results</h4></div>
+                <div class='notFound text-center forms'><h4>Search returned no results</h4></div>
             "; 
         }
     } 

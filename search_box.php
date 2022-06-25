@@ -1,4 +1,4 @@
-<section class="container-fluid ">
+<section class="container-fluid " id="parallax">
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
@@ -88,7 +88,7 @@
                     <a class="btn btn-outline-secondary btn-sm job_btn m-2" href="Supply and Procurement">Supply and Procurement</a>
                     <a class="btn btn-outline-secondary btn-sm job_btn m-2" href="Transport and Logistics">Transport and Logistics</a>
                     <a class="btn btn-outline-secondary btn-sm job_btn m-2" href="Writing and Editing">Writing and Editing</a>
-                    <a class="btn btn-outline-secondary btn-sm job_btn m-2" href="Other Field">Other Field</a>
+                    <a class="btn btn-outline-secondary btn-sm job_btn m-2" href="Other Fields">Other Fields</a>
                 </div>
             </div>
                         

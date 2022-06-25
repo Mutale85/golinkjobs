@@ -56,6 +56,8 @@ function searchKeyWord(value){
 
 function getCategoryResults(value){
 	var postedJobs = value;
+	var titleLabel = document.getElementById('titleLabel');
+	titleLabel.innerText =  `${postedJobs} Jobs`;
 	var keyword = document.getElementById('keyword').value;
 	$.ajax({
 		url:"includes/getCategoryResults",

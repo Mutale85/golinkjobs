@@ -6,16 +6,20 @@
   	<body>
     	<?php include("incs/nav.php")?>
     	<?php include("search_box.php")?>
-		<section>
-			<div class="container-fluid">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12"><h3 id="titleLabel" class="text-center text-secondary"></h3></div>
-						<div id="postedJobs" class="postedJobs"><div class="spinner-border "></div>Please Wait....</div>
+
+		<div class="container-fluid">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12"><h3 id="titleLabel" class="text-center text-secondary"></h3></div>
+					<div id="postedJobs" class="postedJobs"><div class="spinner-border "></div>Please Wait....</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<img src="images/Pic1.png" class="img-fluid" alt="leg">
 					</div>
 				</div>
 			</div>
-		</section>
+		</div>
 		<?php include 'incs/footer.php';?>
 		<div class="modal" tabindex="-1" role="dialog" id="partnerModal">
 			<div class="modal-dialog" role="document">

@@ -34,7 +34,7 @@
             }
         }else{
             echo "
-                <div class='notFound'><h5>Search returned no result</h5></div>
+                <div class='notFound text-center forms'><h5>Search returned no result</h5></div>
             ";
         }
     }

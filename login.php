@@ -7,14 +7,6 @@
 	    }
 	?>
     <style>
-    	@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-		body {
-		    font-family: 'PT Sans', sans-serif;
-		    background-color: #6499cd;
-		}
-		/*.container{
-		    background-color: #6499cd;
-		}*/
 		h1{
 		    margin: 15px 0 25px;
 		    text-align: center;
@@ -22,6 +14,7 @@
 		}
 		img.logo {
 			margin: .5em auto;
+			width: 100px;
 		}
 		input{
 		    color:#022255 !important;
@@ -31,6 +24,9 @@
 		input[type=text]:focus{
 		    box-shadow: 0 0 5px rgba(246, 8, 110,0.8);
 		    border: 1px solid rgba(246, 8, 110,0.8);
+		}
+		a:link, a:active {
+			text-decoration: none;
 		}
 		.container{
 		    width: 100%;
@@ -71,7 +67,7 @@
 		    background-color: #02b502;
 		}
 		.login-btn{
-		    width: 180px !important;
+		    width: 100% !important;
 		    background-image: linear-gradient(to right, #f6086e , #ff133a) !important;
 		    font-size: 18px;
 		    color: #fff;
@@ -113,7 +109,7 @@
 	    <div class="container">
 	        <form class="form-horizontal" id="validateForm" method="post">
 	        	<div class="text-center">
-		        	<a href="./"><img src="images/remotejobsLogo.png" class="img-responsive logo"></a>
+		        	<a href="./"><img src="images/Gologo.png" class="img-responsive logo"></a>
 		            <h1>Welcome</h1>
 		        </div>
 	            <fieldset>
@@ -150,14 +146,11 @@
 	                        Sign In
 	                    </button>    
 	                </div>
-	                <div class="ex-account">
-	                    <p>Fogot Password? 
-	                        <a href="forgot-password">Click HERE</a>
-	                    </p>
-	                    <div class="divider"></div>
-	                </div>
+	                <p>Fogot Password? 
+                        <a href="forgot-password" title="password">Reset Password</a>
+                    </p>
 	                <p>New here? 
-	                        <a href="register">Sign Up</a>
+	                        <a href="register" title="register">Create your employers account</a>
 	                    </p>
 	            </fieldset>
 	        </form>   
