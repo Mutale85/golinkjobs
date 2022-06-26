@@ -20,7 +20,7 @@
 					</div>
 					<div class="col-md-12">
 						<div class="forms">
-							<h3 class="mb-4 text-center">Get Job links alerts straight in inbox</h3>
+							<h3 class="mb-4 text-center">Get Jobs alerts straight in inbox</h3>
 							<form method="post" id="subscribersForm">
 								<div class="row">
 									<div class="form-group col-md-4 mb-3">

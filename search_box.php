@@ -1,12 +1,9 @@
 <style>
     .u-section-1 {
         background-image: url(images/paper-rocket-6897262.svg);
-        /*background-image: url(images/globe.jpeg);*/
-        /*background-position: 50% 50%;*/
         height: 80vh;
         background-repeat: no-repeat;
         background-size: auto 100%;
-        /*background-position: left top;*/
     }
     .u-image, .u-background-effect-image, .u-video-poster {
         object-fit: cover;

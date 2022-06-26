@@ -19,21 +19,22 @@
 <title>Access Remote Jobs</title>
 <style>
     .success_btn {
-        border: 2px solid #1ecbe1;
+        border: 2px solid #e9afc6;
         padding: .7em 1.1em;
         border-radius: 6px;
-        background-color: #1ecbe1;
+        background-color: #e9afc6;
         color: #fff;
         transition: 0.5s;
     }
     .success_btn:hover {
-        background-color: #280b17;
+        background-color: #e9afc6;
         color: #fff;
-        border:2px solid #280b17;
+        border:2px solid #e9afc6;
     }
     .new_job {
-        border: 2px solid #280b17;
-        padding: .3em .7em;
+        background-color: #e9afc6;
+        color: #000 !important;
+        padding: .5em 1em;
         border-radius: 2em;
         box-shadow: 0 0  5px;
         transition: 0.5s;
