@@ -3,3 +3,5 @@
 /int17
 .env
 conf.php
+/includes/conf.php
+plan.php

@@ -15,3 +15,37 @@ finance@bulwarkdebtcollectors.com - Finance@2022
 info@bulwarkdebtcollectors.com - Main@Bulwarks2022
 jonathan@bulwarkdebtcollectors.com - Jonathan@2022
 operations@bulwarkdebtcollectors.com - Ops@bulwark2022
+
+sudo mkdir -p /var/www/golinkjobs.com/public_html
+sudo chown -R $USER:$USER /var/www/golinkjobs.com/public_html
+sudo chmod -R 755 /var/www
+sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/golinkjobs.com.conf
+sudo nano /etc/apache2/sites-available/golinkjobs.com.conf
+
+<VirtualHost *:80>
+    ServerName golinkjobs.com
+    ServerAlias www.golinkjobs.com
+    ServerAdmin info@golinkjobs.com
+    DocumentRoot /var/www/golinkjobs.com/public_html
+
+    <Directory /var/www/golinkjobs.com/public_html>
+        Options -Indexes +FollowSymLinks
+        AllowOverride All
+    </Directory>
+
+    ErrorLog ${APACHE_LOG_DIR}/golinkjobs.com-error.log
+    CustomLog ${APACHE_LOG_DIR}/golinkjobs.com-access.log combined
+</VirtualHost>
+
+sudo a2ensite golinkjobs.com
+sudo a2dissite 000-default.conf
+sudo apache2ctl configtest
+sudo systemctl restart apache2
+sudo systemctl status apache2
+
+//-----optional
+
+sudo nano /etc/hosts
+
+167.86.116.235 golinkjobs.com
+your_server_IP your_domain_2

@@ -179,9 +179,11 @@
 			    							<input type="text" name="application_deadline" id="datepicker" class="form-control" required>
 			    							<input type="hidden" name="estimated_period" id="estimated_period">
 			    						</div>
-
+			    						<label>
+											<input class="form-check-input mb-3" type="checkbox" name="terms" id="terms" required > I agree to <a href="terms-and-conditions">Terms and Conditions</a>
+										</label>
 			    						<div class="col-md-12">
-			    							<button class="btn btn success_btn shadow" id="submitBtn">Submit Job For <span id="amount_calc">$3.99 / Day</span> </button>
+			    							<button class="btn btn-outline-secondary shadow" id="submitBtn">Submit Job For <span id="amount_calc">$3.99 / Day</span> </button>
 			    						</div>
 			    					</div>
 		    					</form>
@@ -416,31 +418,37 @@
 			$(function(){
 				
 				$("#jobForm").submit(function(e){
-					e.preventDefault();
-					var jobForm = document.getElementById('jobForm');
-					var data = new FormData(jobForm);
-					var url = 'includes/submitNewJob';
-					$.ajax({
-						url:url+'?<?php echo time()?>',
-						method:"post",
-						data:data,
-						cache : false,
-						processData: false,
-						contentType: false,
-						beforeSend:function(){
-							$("#submitBtn").html("<i class='spinner-border'></i> Processing...");
-						},
-						success:function(data){
-							successNow(data);
-							$("#jobForm")[0].reset();
-							$('#job_description').summernote('reset');
-							$("#submitBtn").html('Submit Job For <span id="amount_calc">$3.99 / Day</span>');
-							setTimeout(function(){
-								window.location = 'post-a-job-final';
-							}, 1500);
-						}
-					})
+					if(document.getElementById('terms').checked === true){
+						e.preventDefault();
+						var jobForm = document.getElementById('jobForm');
+						var data = new FormData(jobForm);
+						var url = 'includes/submitNewJob';
+						$.ajax({
+							url:url+'?<?php echo time()?>',
+							method:"post",
+							data:data,
+							cache : false,
+							processData: false,
+							contentType: false,
+							beforeSend:function(){
+								$("#submitBtn").html("<i class='spinner-border'></i> Processing...");
+							},
+							success:function(data){
+								successNow(data);
+								$("#jobForm")[0].reset();
+								$('#job_description').summernote('reset');
+								$("#submitBtn").html('Submit Job For <span id="amount_calc">$3.99 / Day</span>');
+								setTimeout(function(){
+									window.location = 'post-a-job-final';
+								}, 1500);
+							}
+						})
+					}else{
+						errorNow("Please Agree to Terms");
+						return false;
+					}
 				})
+				
 			})
 
 			function successNow(msg){
