@@ -27,12 +27,12 @@
         transition: 0.5s;
     }
     .success_btn:hover {
-        background-color: #6c757d;
+        background-color: #280b17;
         color: #fff;
-        border:2px solid #6c757d;
+        border:2px solid #280b17;
     }
     .new_job {
-        border: 2px solid #0239b0;
+        border: 2px solid #280b17;
         padding: .3em .7em;
         border-radius: 2em;
         box-shadow: 0 0  5px;

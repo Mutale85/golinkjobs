@@ -1,10 +1,39 @@
-<section class="container-fluid " id="parallax" data-image-width="1920" data-image-height="1080">
+<style>
+    .u-section-1 {
+        background-image: url(images/paper-rocket-6897262.svg);
+        /*background-image: url(images/globe.jpeg);*/
+        /*background-position: 50% 50%;*/
+        height: 80vh;
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        /*background-position: left top;*/
+    }
+    .u-image, .u-background-effect-image, .u-video-poster {
+        object-fit: cover;
+        display: block;
+        vertical-align: middle;
+        background-size: cover;
+        background-position: 70% 30%;
+    }
+
+    .u-shading, .u-overlap.u-overlap-contrast .u-header {
+        color: #ffffff;
+    }
+    .mainIntro {
+        margin-top: 3em;
+        padding: 2em;
+        color: #000 !important;
+    }
+</style>
+<div class="container-fluid u-clearfix u-image u-shading u-section-1 mb-5" id="parallax" data-image-width="1920" data-image-height="1080">
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
-                <h1 class="infoTitle">Go Link Jobs</h1>
-                <p class="fs-4 text-secondary">Get Jobs that suit you direct in your inbox</p>
-                <p>We will never show you jobs that have expired</p>
+                <div class="mainIntro">
+                    <h1 class="infoTitle">Go Link Jobs</h1>
+                    <h2 class="">Find Jobs that will inspire you to achieve more</h2>
+                    <h3 class="">We will never show you jobs that have expired</h3>
+                </div>
             </div>
             <div class="col-md-12">
                 <div class="postedJobs text-center">
@@ -59,39 +88,39 @@
             </div>
             <div class="col-md-12 forBig">
                 <div class="postedJobs">
-                    <a class="btn btn-outline-secondary btn-sm job_btn m-2" href="Accounting And Finance">Accounting And Finance</a>
-                    <a class="btn btn-outline-secondary btn-sm job_btn m-2" href="Administrative">Administrative</a>
-                    <a class="btn btn-outline-secondary btn-sm job_btn m-2" href="Administrative Assistant">Administrative Assistant</a>
-                    <a class="btn btn-outline-secondary btn-sm job_btn m-2" href="Agriculture and Natural Resources">Agriculture and Natural Resources</a>
-                    <a class="btn btn-outline-secondary btn-sm job_btn m-2" href="Architecture and Construction">Architecture and Construction</a>
-                    <a class="btn btn-outline-secondary btn-sm job_btn m-2" href="Automotive Industry">Automotive Industry</a>
-                    <a class="btn btn-outline-secondary btn-sm job_btn m-2" href="Aviation Industry">Aviation Industry</a>
-                    <a class="btn btn-outline-secondary btn-sm job_btn m-2" href="Business Development">Business Development</a>
-                    <a class="btn btn-outline-secondary btn-sm job_btn m-2" href="Business Administration">Business Administration</a>
-                    <a class="btn btn-outline-secondary btn-sm job_btn m-2" href="Communications">Communications</a>
-                    <a class="btn btn-outline-secondary btn-sm job_btn m-2" href="Community and Social Services">Community and Social Services</a>
-                    <a class="btn btn-outline-secondary btn-sm job_btn m-2" href="Consultancy">Consultancy</a>
-                    <a class="btn btn-outline-secondary btn-sm job_btn m-2" href="Customer Service">Customer Service</a>
-                    <a class="btn btn-outline-secondary btn-sm job_btn m-2" href="Education">Education</a>
-                    <a class="btn btn-outline-secondary btn-sm job_btn m-2" href="Engineering">Engineering</a>
-                    <a class="btn btn-outline-secondary btn-sm job_btn m-2" href="Fire and Safety">Fire and Safety</a>
-                    <a class="btn btn-outline-secondary btn-sm job_btn m-2" href="Health Care Services">Health Care Services</a>
-                    <a class="btn btn-outline-secondary btn-sm job_btn m-2" href="Human Resource">Human Resource</a>
-                    <a class="btn btn-outline-secondary btn-sm job_btn m-2" href="Information Technology">Information Technology </a>
-                    <a class="btn btn-outline-secondary btn-sm job_btn m-2" href="Legal Services">Legal Services</a>
-                    <a class="btn btn-outline-secondary btn-sm job_btn m-2" href="Marketing and Sales">Marketing and Sales</a>
-                    <a class="btn btn-outline-secondary btn-sm job_btn m-2" href="Media and Arts">Media and Arts</a>
-                    <a class="btn btn-outline-secondary btn-sm job_btn m-2" href="Physical Trainer">Physical Trainer</a>
-                    <a class="btn btn-outline-secondary btn-sm job_btn m-2" href="Project Management">Project Management</a>
-                    <a class="btn btn-outline-secondary btn-sm job_btn m-2" href="Product Management">Product Management</a>
-                    <a class="btn btn-outline-secondary btn-sm job_btn m-2" href="Quality Assurance">Quality Assurance</a>
-                    <a class="btn btn-outline-secondary btn-sm job_btn m-2" href="Supply and Procurement">Supply and Procurement</a>
-                    <a class="btn btn-outline-secondary btn-sm job_btn m-2" href="Transport and Logistics">Transport and Logistics</a>
-                    <a class="btn btn-outline-secondary btn-sm job_btn m-2" href="Writing and Editing">Writing and Editing</a>
-                    <a class="btn btn-outline-secondary btn-sm job_btn m-2" href="Other Fields">Other Fields</a>
+                    <a class="btn btn-secondary btn-sm job_btn m-2" href="Accounting And Finance">Accounting And Finance</a>
+                    <a class="btn btn-secondary btn-sm job_btn m-2" href="Administrative">Administrative</a>
+                    <a class="btn btn-secondary btn-sm job_btn m-2" href="Administrative Assistant">Administrative Assistant</a>
+                    <a class="btn btn-secondary btn-sm job_btn m-2" href="Agriculture and Natural Resources">Agriculture and Natural Resources</a>
+                    <a class="btn btn-secondary btn-sm job_btn m-2" href="Architecture and Construction">Architecture and Construction</a>
+                    <a class="btn btn-secondary btn-sm job_btn m-2" href="Automotive Industry">Automotive Industry</a>
+                    <a class="btn btn-secondary btn-sm job_btn m-2" href="Aviation Industry">Aviation Industry</a>
+                    <a class="btn btn-secondary btn-sm job_btn m-2" href="Business Development">Business Development</a>
+                    <a class="btn btn-secondary btn-sm job_btn m-2" href="Business Administration">Business Administration</a>
+                    <a class="btn btn-secondary btn-sm job_btn m-2" href="Communications">Communications</a>
+                    <a class="btn btn-secondary btn-sm job_btn m-2" href="Community and Social Services">Community and Social Services</a>
+                    <a class="btn btn-secondary btn-sm job_btn m-2" href="Consultancy">Consultancy</a>
+                    <a class="btn btn-secondary btn-sm job_btn m-2" href="Customer Service">Customer Service</a>
+                    <a class="btn btn-secondary btn-sm job_btn m-2" href="Education">Education</a>
+                    <a class="btn btn-secondary btn-sm job_btn m-2" href="Engineering">Engineering</a>
+                    <a class="btn btn-secondary btn-sm job_btn m-2" href="Fire and Safety">Fire and Safety</a>
+                    <a class="btn btn-secondary btn-sm job_btn m-2" href="Health Care Services">Health Care Services</a>
+                    <a class="btn btn-secondary btn-sm job_btn m-2" href="Human Resource">Human Resource</a>
+                    <a class="btn btn-secondary btn-sm job_btn m-2" href="Information Technology">Information Technology </a>
+                    <a class="btn btn-secondary btn-sm job_btn m-2" href="Legal Services">Legal Services</a>
+                    <a class="btn btn-secondary btn-sm job_btn m-2" href="Marketing and Sales">Marketing and Sales</a>
+                    <a class="btn btn-secondary btn-sm job_btn m-2" href="Media and Arts">Media and Arts</a>
+                    <a class="btn btn-secondary btn-sm job_btn m-2" href="Physical Trainer">Physical Trainer</a>
+                    <a class="btn btn-secondary btn-sm job_btn m-2" href="Project Management">Project Management</a>
+                    <a class="btn btn-secondary btn-sm job_btn m-2" href="Product Management">Product Management</a>
+                    <a class="btn btn-secondary btn-sm job_btn m-2" href="Quality Assurance">Quality Assurance</a>
+                    <a class="btn btn-secondary btn-sm job_btn m-2" href="Supply and Procurement">Supply and Procurement</a>
+                    <a class="btn btn-secondary btn-sm job_btn m-2" href="Transport and Logistics">Transport and Logistics</a>
+                    <a class="btn btn-secondary btn-sm job_btn m-2" href="Writing and Editing">Writing and Editing</a>
+                    <a class="btn btn-secondary btn-sm job_btn m-2" href="Other Fields">Other Fields</a>
                 </div>
             </div>
                         
         </div>
     </div>
-</section>
+</div>

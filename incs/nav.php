@@ -3,7 +3,7 @@
 		
 ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top"  aria-current="true">
-	<div class="container">
+	<div class="container-fluid">
 		<a class="navbar-brand" href="./"><img src="images/Gologo.png" class="img-fluid Logo" alt="logo" width="40"> Golinkjobs</a>
 		<div class="navbar-toggler three cols" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 		    <div class="hamburger" id="hamburger-3">
@@ -42,7 +42,7 @@
 	}else{
 ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-white p-3 border-bottom fixed-top">
-    <div class="container">
+    <div class="container-fluid">
         <a class="navbar-brand" href="./">Partners Portal</a>
         <div class="navbar-toggler three cols" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <div class="hamburger" id="hamburger-3">
