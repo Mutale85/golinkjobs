@@ -1,4 +1,4 @@
-<base href="http://localhost/accessremotejobs.com/">
+<base href="http://localhost/golinkjobs.com/">
 <!DOCTYPE html>
 <html lang="en">
   	<head>
@@ -28,7 +28,7 @@
 							?>
 								<div class="cvDiv mt-5 mb-5">
 									<h1 class="mb-4">Hey <?php echo $firstname?>, Your CV is Ready !</h1>
-									<embed src="http://localhost/accessremotejobs.com/cv_uploads/<?php echo $cv_file?>" type="application/pdf" width="100%" height="800px" />
+									<embed src="http://localhost/golinkjobs.com/cv_uploads/<?php echo $cv_file?>" type="application/pdf" width="100%" height="800px" />
 								</div>
 								
 							<?php

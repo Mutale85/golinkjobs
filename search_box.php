@@ -1,6 +1,7 @@
 <style>
     .u-section-1 {
-        background-image: url(images/paper-rocket-6897262.svg);
+        /*background-image: url(images/paper-rocket-6897262.svg);*/
+        background-image: url(images/paper-rocket.svg);
         height: 80vh;
         background-repeat: no-repeat;
         background-size: auto 100%;

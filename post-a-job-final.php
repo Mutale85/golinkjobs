@@ -44,7 +44,7 @@
 								  amount: totalMmount,
 								  currency: "USD",
 								  payment_options: "card, mobilemoneyzambia, ussd",
-								  redirect_url: "http://localhost/accessremotejobs.com/payments?amount="+totalMmount+"&customer_email="+email+"&application_id="+consumer_id+"&customer_name="+company_name,
+								  redirect_url: "https://golinkjobs.com/payments?amount="+totalMmount+"&customer_email="+email+"&application_id="+consumer_id+"&customer_name="+company_name,
 								  meta: {
 								    consumer_id: consumer_id,
 								    consumer_mac: "92a3-912ba-1192a",
@@ -57,7 +57,8 @@
 								  customizations: {
 								    title: "AccessRemoteJobs.com",
 								    description: "Payment for Job Posting",
-								    logo: "https://weblister.co/images/icon_new.png",
+								    logo: "https://golinkjobs.com/images/Gologo.png",
+								    
 								  },
 								});
 							}
@@ -101,7 +102,7 @@
 								  amount: totalMmount,
 								  currency: "USD",
 								  payment_options: "card, mobilemoneyzambia, ussd",
-								  redirect_url: "http://localhost/accessremotejobs.com/payments?amount="+totalMmount+"&customer_email="+email+"&application_id="+consumer_id+"&customer_name="+company_name,
+								  redirect_url: "https://golinkjobs.com/payments?amount="+totalMmount+"&customer_email="+email+"&application_id="+consumer_id+"&customer_name="+company_name,
 								  meta: {
 								    consumer_id: consumer_id,
 								    consumer_mac: "92a3-912ba-1192a",

@@ -3,13 +3,6 @@
 <html lang="en">
   	<head>
     	<?php include("incs/header.php") ?>
-    	<style>
-    	
-    		.btn-outline-secondary {
-    			padding: 14px 20px;
-    			border-radius: 23px;
-    		}
-    	</style>
  	</head>
   	<body>
     	<?php include("incs/nav.php")?>
@@ -17,14 +10,12 @@
 			<div class="container-fluid mt-5 mb-5">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-12 mb-5 text-center">
+						<div class="col-md-12 mb-3 text-center">
 							<h1 class="">Welcome to Go Link Jobs</h1>
 							
 							<div class="text-center mb-4 mt-3">
-								<p class="fs-5">Do you know that you can upload your Curriculum Vitae and let employers contact you directly?</p>
-								<a href="view-my-cv" class="btn btn-outline-secondary bg-secondary text-white viewCV mb-2">View Uploaded CV</a>
+								<p class="fs-5">Let recruiters contact you. Upload your resume</p>
 							</div>
-							
 						</div>
 						<div class="forms">
 							<h4 class="text-center mb-3">Your Resume Form</h4>
@@ -180,52 +171,8 @@
 					</div>
 				</div>
 			</div>
-			<!-- Modal -->
-			<div class="modal left fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			  	<div class="modal-dialog">
-			    	<div class="modal-content modal-dialog-scrollable">
-			      		<div class="modal-header">
-			        		<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-			        		<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			      		</div>
-			      		<div class="modal-body">
-			        		<div id="fetchJobsByCategory"></div>
-			      		</div>
-			      		<div class="modal-footer">
-			      		</div>
-			    	</div>
-			  	</div>
-			</div>
-			<div class="modal right fade" tabindex="-1" role="dialog" id="profileModal">
-				<div class="modal-dialog modal-lg" role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h4 class="modal-title">Check My Resume</h4>
-							<button type="button" class="btn-close text-danger" data-bs-dismiss="modal" aria-label="Close"></button>
-						</div>
-						<div class="modal-body">
-							<form method="post" id="confirmationForms">
-								<div class="form-group mb-3">
-									<label class="mb-2">Enter Email</label>
-									<div class="input-group">
-										<span class="input-group-text">
-											<i class="bi bi-upc-scan"></i>
-										</span>
-										<input type="text" name="email" id="email" class="form-control" required placeholder="Enter Email">
-									</div>
-								</div>
-								<div class="d-flex justify-content-between">
-									<button class="btn btn-primary" id="submitEmail" type="submit">Verify Email</button>
-								</div>
-							</form>
-							<progress value="0" max="10" id="progressBar"></progress>
-						</div>
-						<div class="modal-footer d-flex justify-content-between">
-							<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-						</div>
-					</div>
-				</div>
-			</div>
+			
+			
 			<!-- <script type="text/javascript" src="js/main.js"></script> -->
 			
 		</section>
@@ -247,15 +194,6 @@
 			// $("#profileModal").modal("show");
 			$(function(){
 				 
-				$(".viewCV").click(function(e){
-					e.preventDefault();
-					$("#profileModal").modal("show");
-					// cvForm.style.display = 'none';
-					confirmationForms.style.display = 'block';
-				})
-
-				
-
 				$("#cvForm").submit(function(e){
 					e.preventDefault();
 					var cvForm = document.getElementById('cvForm');
@@ -287,31 +225,6 @@
 				})
 
 
-				$("#confirmationForms").submit(function(e){
-					e.preventDefault();
-					var confirmationForms = document.getElementById('confirmationForms');
-					var data = new FormData(confirmationForms);
-					var url = 'includes/submitEmailForCv';
-					$.ajax({
-						url:url+'?<?php echo time()?>',
-						method:"post",
-						data:data,
-						cache : false,
-						processData: false,
-						contentType: false,
-						beforeSend:function(){
-							$("#submitEmail").html("<i class='spinner-border'></i> Processing...");
-							timerD();
-						},
-						success:function(data){
-							successNow(data);
-							$("#submitEmail").html("Submit Details")
-							$("#confirmationForms")[0].reset();
-							document.getElementById('progressBar').style.display = 'none';
-						}
-					})
-				})
-
 		
 			})
 			document.getElementById('progressBarOne').style.display = 'none';
@@ -325,21 +238,6 @@
 				    //show the resend button
 				  }
 				  document.getElementById("progressBarOne").value = 10 - timeleft;
-				  timeleft -= 1;
-				}, 1000);
-			}
-
-
-			function timerD(){
-				document.getElementById('progressBar').style.display = 'block';
-				var timeleft = 10;
-				var downloadTimer = setInterval(function(){
-				  if(timeleft <= 0){
-				    clearInterval(downloadTimer);
-				    // alert("Resend Code");
-				    //show the resend button
-				  }
-				  document.getElementById("progressBar").value = 10 - timeleft;
 				  timeleft -= 1;
 				}, 1000);
 			}

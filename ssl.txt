@@ -1,0 +1,11 @@
+1. sudo apt install certbot python3-certbot-apache
+2. sudo nano /etc/apache2/sites-available/golinkjobs.com.conf
+3. sudo apache2ctl configtest
+4. sudo systemctl reload apache2
+5. sudo ufw status
+6. sudo ufw allow 'Apache Full'
+7. sudo ufw delete allow 'Apache'
+8. sudo certbot --apache/
+
+9. sudo systemctl status certbot.timer
+<script src="https://gist.github.com/Mutale85/26386399f28d7d4490fc845499f0f936.js"></script>

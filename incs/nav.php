@@ -2,7 +2,7 @@
 	if (!isset($_SESSION['user_email_job_portal'])) {
 		
 ?>
-<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top"  aria-current="true">
+<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom fixed-top"  aria-current="true">
 	<div class="container-fluid">
 		<a class="navbar-brand" href="./"><img src="images/Gologo.png" class="img-fluid Logo" alt="logo" width="40"> Golinkjobs</a>
 		<div class="navbar-toggler three cols" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,11 +15,18 @@
 		<div class="collapse navbar-collapse" id="navbarNavDropdown">
 			<ul class="navbar-nav ms-auto">
 				<li class="nav-item">
-			      	<a class="nav-link " href="the-blog" title="theblog">How To</a>
-			    </li>
-			    <li class="nav-item">
-			      	<a class="nav-link " href="resume" title="resume">Post Resume</a>
-			    </li>
+                    <a class="nav-link post_new_job" href="new-job-post" title="post-a-job">POST A JOB</a>
+                </li>
+			    
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Job Seeker
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="resume" title="resume">Post Resume </a></li>
+                        <li><a class="dropdown-item" href="view-my-cv" title="view-my-cv" id="viewResume">My Resume</a></li>
+                    </ul>
+                </li>
 			    
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -32,8 +39,8 @@
                     </ul>
                 </li>
 	    		<li class="nav-item">
-	      			<a class="nav-link new_job" href="post-a-job" title="post-a-job">Post a Job</a>
-	    		</li>
+                    <a class="nav-link " href="the-blog" title="theblog">How To</a>
+                </li>
 	  		</ul>
 		</div>
 	</div>

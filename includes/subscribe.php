@@ -39,11 +39,11 @@
 		                </style>
 		            </head>
 		            <body>
-		            	<p align="center"><img src="http://localhost/golinkjobs.com/images/Gologo.png" class="imgLogo" width="100" alt="Gologo"></p>
+		            	<p align="center"><img src="https://golinkjobs.com/images/Gologo.png" class="imgLogo" width="100" alt="Gologo"></p>
 		            	<h3 align="center">Hello '.$subscriber_name.'</h3>
 		            	<p>Thank you for signing up to job alerts.</p>
 		            	<p>Did you know that you can add your resume to receive so that employers can contact you directly?</p>
-		            	<h3><a href="http://localhost/golinkjobs.com/resume?check=true"> Add my Resume</a></h3>
+		            	<h3><a href="https://golinkjobs.com/resume?check=true"> Add my Resume</a></h3>
 		            	
 		            </body>
 	            </html>

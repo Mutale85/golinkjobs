@@ -48,4 +48,19 @@ sudo systemctl status apache2
 sudo nano /etc/hosts
 
 167.86.116.235 golinkjobs.com
-your_server_IP your_domain_2
+
+
+Step 1 — Installing Certbot
+In order to obtain an SSL certificate with Let’s Encrypt, we’ll first need to install the Certbot software on your server. We’ll use the default Ubuntu package repositories for that.
+
+We need two packages: certbot, and python3-certbot-apache. The latter is a plugin that integrates Certbot with Apache, making it possible to automate obtaining a certificate and configuring HTTPS within your web server with a single command.
+
+1. sudo apt install certbot python3-certbot-apache
+2. sudo nano /etc/apache2/sites-available/your_domain.conf
+3. sudo apache2ctl configtest
+4. sudo systemctl reload apache2
+5. sudo ufw status
+6. sudo ufw allow 'Apache Full'
+7. sudo ufw delete allow 'Apache'
+8. sudo certbot --apache
+

@@ -61,8 +61,8 @@
 	                                </tr>
 	                                <tr>
 	                                    <td style="text-align:center;">
-	                                      	<a href="http://golinkjobs.com" title="logo" target="_blank">
-	                                        	<h1>Job Portal</h1>
+	                                      	<a href="https://golinkjobs.com" title="logo" target="_blank">
+	                                        	<p align="center"><img src="https://golinkjobs.com/images/Gologo.png" class="imgLogo" width="100" alt="Gologo"></p>
 	                                      	</a>
 	                                    </td>
 	                                </tr>
@@ -86,9 +86,9 @@
 	                                                    <div style="color:#455056; font-size:15px;line-height:24px; margin:0;">
 	                                                        <h2 class="title2">Thank you for signing up</h2>
 	                                                        <p></p>
-	                                                        <a href="http://localhost/golinkjobs.com/activation?userid='.$parent_id.'&email='.$email.'&pass='.$password.'" class="linkBtn"> Activate Account</a>
+	                                                        <a href="https://golinkjobs.com/activation?userid='.$parent_id.'&email='.$email.'&pass='.$password.'" class="linkBtn"> Activate Account</a>
 	                                                        <p> You can also copy and paste the link below into your browser.</p>
-	                                                        <p>http://localhost/golinkjobs.com/activation?userid='.$parent_id.'&email='.$email.'&pass='.$password.'</p>
+	                                                        <p>https://golinkjobs.com/activation?userid='.$parent_id.'&email='.$email.'&pass='.$password.'</p>
 	                                                        <p></p>
 	                                                    </div>
 

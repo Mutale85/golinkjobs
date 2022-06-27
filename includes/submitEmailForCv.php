@@ -15,33 +15,50 @@
 		if ($query->rowCount() > 0) {
 			$update = $connect->prepare("UPDATE `posted_cvs` SET `code` = ? WHERE `email` = ? ");
 			$update->execute([$code, $email]);
+			$row = $query->fetch();
+			$firstname = $row['firstname'];
 			$message = '
 					<!doctype html>
-			            <html lang="en-US">
+						<html lang="en-US">
 
-			            <head>
-			                <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-			                <title>Osabox - Registration</title>
-			                <meta name="description" content="Reset Password Email Template.">
-			                <style type="text/css">
-			                    a:link, a:active {text-decoration: none !important;}
-			                    a.mainBtn {
-			                    	padding: 14px 20px;
-    								border-radius: 23px;
-    								background:gray;
-    								font-size:18px;
-    								color:#000;
-    								border:2px solid #000;
-			                    }
-			                </style>
-			            </head>
-			            <body>
-			            	<p>Please Verify your email to view your Curriculum Vitae </p>
-			            	<h3><a href="http://localhost/golinkjobs.com/view-my-cv?code='.$code.'&d='.base64_encode($email).'" class="mainBtn"> View my Resume</a></h3>
-			            	<p>You can also copy and paste this link to your browser: href="http://localhost/golinkjobs.com/view-my-cv?code='.$code.'&d='.base64_encode($email).'"</p>
+						<head>
+						    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+						    <title>Go Link Jobs - View my Resume</title>
+						    <meta name="description" content="Go Link Jobs - View my Resume">
+						    <style type="text/css">
+						        .mailDiv {
+						          text-align:center;
+						          border:1px solid #dddd;
+						          box-shadow: 0 0 5px;
+						          padding:2em;
+						          letter-spacing:1.5px;
+						        }
+						      a:link, a:active {text-decoration: none !important;}
+						      
+						      p {
+						        margin:2em auto;
+						      }
 
-			            </body>
-		            </html>
+						      a.mainBtn {
+						        border:2px solid #6499cd;
+						        background: #6499cd;
+						        color:#fff;
+						        padding:1em .8em;
+						        border-radius:45px;
+						        text-shadow:0 0 4px;
+						      }
+						    </style>
+						</head>
+						<body>
+						    <div class="mailDiv">
+						      <p align="center"><img src="https://golinkjobs.com/images/Gologo.png" width="80"></p>
+						      <h3>Hello '.$firstname.'</h3>
+						    <p>You requested for a link to view your Resume </p>
+						    <a href="https://golinkjobs.com/view-my-cv?code='.$code.'&d='.base64_encode($email).'" class="mainBtn"> View my Resume</a>
+						    <p>You can also copy and paste this link to your browser:<br> href="https://golinkjobs.com/view-my-cv?code='.$code.'&d='.base64_encode($email).'"</p>
+						    </div>
+						</bod>
+					</html>
 			';
 			$mail = new PHPMailer();
 			$mail->Host = "smtp.zoho.com";

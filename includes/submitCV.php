@@ -49,11 +49,11 @@
 		                </style>
 		            </head>
 		            <body>
-		            	<p align="center"><img src="http://localhost/golinkjobs.com/images/Gologo.png" class="imgLogo" width="100" alt="Gologo"></p>
+		            	<p align="center"><img src="https://golinkjobs.com/images/Gologo.png" class="imgLogo" width="100" alt="Gologo"></p>
 		            	<h3 align="center">Hello '.$firstname.'</h3>
 		            	<p>Thank you for adding your CV. Please verify your email </p>
-		            	<h3><a href="http://localhost/golinkjobs.com/verify?code='.$code.'&d='.base64_encode($email).'&i='.$id.'"> Verify Email</a></h3>
-		            	<p>You can also copy and paste this link to your browser: href="http://localhost/golinkjobs.com/verify?code='.$code.'&d='.base64_encode($email).'&i='.$id.'"</p>
+		            	<h3><a href="https://golinkjobs.com/verify?code='.$code.'&d='.base64_encode($email).'&i='.$id.'"> Verify Email</a></h3>
+		            	<p>You can also copy and paste this link to your browser: href="https://golinkjobs.com/verify?code='.$code.'&d='.base64_encode($email).'&i='.$id.'"</p>
 
 		            </body>
 	            </html>
