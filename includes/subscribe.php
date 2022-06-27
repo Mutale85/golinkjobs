@@ -21,32 +21,48 @@
 		$sql->execute([$subscriber_name, $subscriber_email]);
 		
 		$message = '
-				<!doctype html>
-		            <html lang="en-US">
+				
+	            <!doctype html>
+					<html lang="en-US">
 
-		            <head>
-		                <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-		                <title>Osabox - Registration</title>
-		                <meta name="description" content="Reset Password Email Template.">
-		                <style type="text/css">
-		                    a:active, a:link {text-decoration: none !important;}
-		                    img.imgLogo {
-		                    	margin:1em auto;
-		                    }
-		                    h3 {
-		                    	margin:1em auto;
-		                    }
-		                </style>
-		            </head>
-		            <body>
-		            	<p align="center"><img src="https://golinkjobs.com/images/Gologo.png" class="imgLogo" width="100" alt="Gologo"></p>
-		            	<h3 align="center">Hello '.$subscriber_name.'</h3>
-		            	<p>Thank you for signing up to job alerts.</p>
-		            	<p>Did you know that you can add your resume to receive so that employers can contact you directly?</p>
-		            	<h3><a href="https://golinkjobs.com/resume?check=true"> Add my Resume</a></h3>
-		            	
-		            </body>
-	            </html>
+					<head>
+					    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+					    <title>Go Link Jobs - View my Resume</title>
+					    <meta name="description" content="Go Link Jobs - View my Resume">
+					    <style type="text/css">
+					        .mailDiv {
+					          text-align:center;
+					          border:1px solid #dddd;
+					          box-shadow: 0 0 5px;
+					          padding:2em;
+					          letter-spacing:1.5px;
+					        }
+					      a:link, a:active {text-decoration: none !important;}
+					      
+					      p {
+					        margin:2em auto;
+					      }
+
+					      a.mainBtn {
+					        border:2px solid #6499cd;
+					        background: #6499cd;
+					        color:#fff;
+					        padding:1em .8em;
+					        border-radius:45px;
+					        text-shadow:0 0 4px;
+					      }
+					    </style>
+					</head>
+					<body>
+					    <div class="mailDiv">
+					      	<p align="center"><img src="https://golinkjobs.com/images/Gologo.png" width="80"></p>
+					      	<h3>Hello '.$subscriber_name.'</h3>
+					    	<p>Thank you for signing up to job alerts.</p>
+		            		<p>Did you know that you can add your resume to receive direct contacts from employers ?</p>
+		            		<p><a href="https://golinkjobs.com/resume" class="mainBtn"> Add my Resume</a></p>
+					    </div>
+					</bod>
+				</html>
 		';
 		$mail = new PHPMailer();
 		$mail->Host = "smtp.zoho.com";

@@ -92,7 +92,6 @@
 						    	<hr>
 						    	<p> If you have any issues with the payment, contact Go Link Jobs at mulenga@weblister.co</p>
 							    <div class="receipt_print">
-							      	<!-- <button class="print" onclick="window.print()">Print Receipt</button> -->
 							      	<p>Copy of receipt has been maild to your email: <?php echo $userMail ?></p>
 							    </div>
 						  	</div>

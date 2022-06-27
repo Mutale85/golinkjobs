@@ -3,14 +3,6 @@
 <html lang="en">
   	<head>
     	<?php include("incs/header.php") ?>
-    	<style>
-    		.job-details-logo {
-    			width: 80px;
-    			height: 80px;
-    			border-radius: 50%;
-    			border: 1px solid grey;
-    		}
-    	</style>
  	</head>
   	<body>
     	<?php include("incs/nav.php")?>

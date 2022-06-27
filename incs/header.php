@@ -40,38 +40,6 @@
 <link rel="stylesheet" type="text/css" href="js/toastr.min.css">
 <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
-
-<style>
-    .success_btn {
-        border: 2px solid #e9afc6;
-        padding: .7em 1.1em;
-        border-radius: 6px;
-        background-color: #e9afc6;
-        color: #fff;
-        transition: 0.5s;
-    }
-    .success_btn:hover {
-        background-color: #e9afc6;
-        color: #fff;
-        border:2px solid #e9afc6;
-    }
-    .new_job {
-        background-color: #e9afc6;
-        color: #000 !important;
-        padding: .5em 1em;
-        border-radius: 2em;
-        box-shadow: 0 0  5px;
-        transition: 0.5s;
-        text-align: center;
-    }
-    .new_job:hover {
-        box-shadow: none;
-    }
-
-    .job_btn {
-        border-radius: 2em;
-    }
-</style>
 <script>
     $(document).ready(function(){
         $(".hamburger").click(function(){

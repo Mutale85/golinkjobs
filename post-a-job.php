@@ -150,7 +150,9 @@
 			    						
 			    						<div class="form-group col-md-12 mb-5">
 			    							<label class="mb-2 label">Job Description <i class="bi bi-asterisk"></i></label>
-			    							<textarea class="form-control" name="job_description" id="job_description"></textarea>
+			    							<textarea class="form-control" name="job_description" id="job_description">
+			    								
+			    							</textarea>
 			    						</div>
 			    						<div class="form-group col-md-12 mb-5">
 			    							<label class="mb-2 label">Job Type ? <i class="bi bi-asterisk"></i></label>
@@ -376,7 +378,7 @@
 			});
 
 			$('#job_description').summernote({
-		        placeholder: 'Please do not forget to add your job description',
+		        placeholder: 'Tips: Provide a summary of the role, what success in the position looks like, and how this role fits into the organization overall. Responsibilities [Be specific when describing each of the responsibilities. Use gender-neutral, inclusive language.] Example: Determine and develop user requirements for systems in production, to ensure maximum usability. Qualifications - [Some qualifications you may want to include are Skills, Education, Experience, or Certifications.] Example: Excellent verbal and written communication skills',
 		        height: 500,
 		        toolbar: [
 		          ['style', ['style']],

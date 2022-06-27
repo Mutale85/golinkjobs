@@ -31,33 +31,49 @@
 		$id = base64_encode($connect->lastInsertId());
 		
 		$message = '
-				<!doctype html>
-		            <html lang="en-US">
+		
+					<!doctype html>
+						<html lang="en-US">
 
-		            <head>
-		                <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-		                <title>Osabox - Registration</title>
-		                <meta name="description" content="Reset Password Email Template.">
-		                <style type="text/css">
-		                    a:active, a:link {text-decoration: none !important;}
-		                    img.imgLogo {
-		                    	margin:1em auto;
-		                    }
-		                    h3 {
-		                    	margin:1em auto;
-		                    }
-		                </style>
-		            </head>
-		            <body>
-		            	<p align="center"><img src="https://golinkjobs.com/images/Gologo.png" class="imgLogo" width="100" alt="Gologo"></p>
-		            	<h3 align="center">Hello '.$firstname.'</h3>
-		            	<p>Thank you for adding your CV. Please verify your email </p>
-		            	<h3><a href="https://golinkjobs.com/verify?code='.$code.'&d='.base64_encode($email).'&i='.$id.'"> Verify Email</a></h3>
-		            	<p>You can also copy and paste this link to your browser: href="https://golinkjobs.com/verify?code='.$code.'&d='.base64_encode($email).'&i='.$id.'"</p>
+						<head>
+						    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+						    <title>Go Link Jobs - View my Resume</title>
+						    <meta name="description" content="Go Link Jobs - View my Resume">
+						    <style type="text/css">
+						        .mailDiv {
+						          text-align:center;
+						          border:1px solid #dddd;
+						          box-shadow: 0 0 5px;
+						          padding:2em;
+						          letter-spacing:1.5px;
+						        }
+						      a:link, a:active {text-decoration: none !important;}
+						      
+						      p {
+						        margin:2em auto;
+						      }
 
-		            </body>
-	            </html>
-		';
+						      a.mainBtn {
+						        border:2px solid #6499cd;
+						        background: #6499cd;
+						        color:#fff;
+						        padding:1em .8em;
+						        border-radius:45px;
+						        text-shadow:0 0 4px;
+						      }
+						    </style>
+						</head>
+						<body>
+						    <div class="mailDiv">
+						      <p align="center"><img src="https://golinkjobs.com/images/Gologo.png" width="80"></p>
+						      <h3>Hello '.$firstname.'</h3>
+						    <p>Thank you for submitting your resume </p>
+						    <a href="https://golinkjobs.com/verify?code='.$code.'&d='.base64_encode($email).'&i='.$id.'" class="mainBtn"> Verify Email</a>
+						    <p>You can also copy and paste this link to your browser: href="https://golinkjobs.com/verify?code='.$code.'&d='.base64_encode($email).'&i='.$id.'"</p>
+						    </div>
+						</bod>
+					</html>
+					';
 		$mail = new PHPMailer();
 		$mail->Host = "smtp.zoho.com";
 		$mail->isSMTP();

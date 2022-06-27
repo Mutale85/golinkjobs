@@ -1,36 +1,11 @@
-<style>
-    .u-section-1 {
-        /*background-image: url(images/paper-rocket-6897262.svg);*/
-        background-image: url(images/paper-rocket.svg);
-        height: 80vh;
-        background-repeat: no-repeat;
-        background-size: auto 100%;
-    }
-    .u-image, .u-background-effect-image, .u-video-poster {
-        object-fit: cover;
-        display: block;
-        vertical-align: middle;
-        background-size: cover;
-        background-position: 70% 30%;
-    }
-
-    .u-shading, .u-overlap.u-overlap-contrast .u-header {
-        color: #ffffff;
-    }
-    .mainIntro {
-        margin-top: 3em;
-        padding: 2em;
-        color: #000 !important;
-    }
-</style>
 <div class="container-fluid u-clearfix u-image u-shading u-section-1 mb-5" id="parallax" data-image-width="1920" data-image-height="1080">
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
                 <div class="mainIntro">
-                    <h1 class="infoTitle">Go Link Jobs</h1>
-                    <h2 class="">Find Jobs that will inspire you to achieve more</h2>
-                    <h3 class="">We will never show you jobs that have expired</h3>
+                    <h1>Go Link Jobs</h1>
+                    <h2>Find Jobs that will inspire you to achieve more</h2>
+                    <h3>We will never show you jobs that have expired</h3>
                 </div>
             </div>
             <div class="col-md-12">
@@ -116,7 +91,11 @@
                     <a class="btn btn-secondary btn-sm job_btn m-2" href="Transport and Logistics">Transport and Logistics</a>
                     <a class="btn btn-secondary btn-sm job_btn m-2" href="Writing and Editing">Writing and Editing</a>
                     <a class="btn btn-secondary btn-sm job_btn m-2" href="Other Fields">Other Fields</a>
+
                 </div>
+            </div>
+            <div class="col-md-12"></div>
+                <div class="btnContainer mt-5"><a class="btn btn-primary btn-lg job_btn m-2" href="Latest" id="LatestBtn">Latest Jobs</a></div>
             </div>
                         
         </div>

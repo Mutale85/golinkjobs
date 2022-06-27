@@ -28,7 +28,7 @@ function getPostedJobs(){
 		method:"POST",
 		data:{postedJobs:postedJobs},
 		beforeload:function(){
-
+			$("#postedJobs").html('<div class="spinner-border "></div> Processing ...');
 		},
 		success:function(data){
 			$("#postedJobs").html(data);
@@ -37,26 +37,32 @@ function getPostedJobs(){
 }
 getPostedJobs();
 
+// global variables ===========
+var titleLabel = document.getElementById('titleLabel');
+var LatestBtn = document.getElementById('LatestBtn');
 
 function searchKeyWord(value){
 	var postedJobs = value;
-	$.ajax({
-		url:"includes/searchKeyWord",
-		method:"POST",
-		data:{postedJobs:postedJobs},
-		beforeload:function(){
-
-		},
-		success:function(data){
-			$("#postedJobs").html(data);
-		}
-	})
+	if(postedJobs == ""){
+		getPostedJobs();
+	}else{
+		$.ajax({
+			url:"includes/searchKeyWord",
+			method:"POST",
+			data:{postedJobs:postedJobs},
+			beforeload:function(){
+				$("#postedJobs").html('<div class="spinner-border "></div> Processing ...');
+			},
+			success:function(data){
+				$("#postedJobs").html(data);
+			}
+		})
+	}
 }
 
 
 function getCategoryResults(value){
 	var postedJobs = value;
-	var titleLabel = document.getElementById('titleLabel');
 	titleLabel.innerText =  `${postedJobs} Jobs`;
 	var keyword = document.getElementById('keyword').value;
 	$.ajax({
@@ -64,10 +70,52 @@ function getCategoryResults(value){
 		method:"POST",
 		data:{postedJobs:postedJobs, keyword:keyword},
 		beforeload:function(){
-
+			$("#postedJobs").html('<div class="spinner-border "></div> Processing ...');
 		},
 		success:function(data){
 			$("#postedJobs").html(data);
+			LatestBtn.style.display = "block";
 		}
 	})
-}	
+}
+
+
+$(document).on("click", ".job_btn", function(e){
+	e.preventDefault();
+	var fetchJobsByCategory = $(this).attr("href");
+	titleLabel.innerText =  `${fetchJobsByCategory} Jobs`;
+	if($(this).attr("id")){
+		$(this).hide("slow");
+	}
+	$.ajax({
+		url:"includes/fetchJobsByCategory",
+		method:"POST",
+		data:{fetchJobsByCategory:fetchJobsByCategory},
+		beforeload:function(){
+			$("#postedJobs").html('<div class="spinner-border "></div> Processing ...');
+		},
+		success:function(data){
+			$("#postedJobs").html(data);
+			LatestBtn.style.display = "block";
+		}
+	})
+})
+
+$(function(){
+	$("#subscribersForm").submit(function(e){
+		e.preventDefault();
+		$.ajax({
+			url:"includes/subscribe",
+			method:"POST",
+			data:$(this).serialize(),
+			beforeload:function(){
+				$("#subscriberBtn").html("<span class='spinner-border'></span> Please Wait ...");
+			},
+			success:function(data){
+				$("#subscriberBtn").html('Send me Job Alerts');
+				$("#subscribersForm")[0].reset();
+				successNow(data);
+			}
+		})
+	})
+})	
