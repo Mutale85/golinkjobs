@@ -16,26 +16,7 @@
 					        $query->execute(array($jobID));
 					        $row = $query->fetch();
 					        extract($row);
-					        // 
-					        // $check = $connect->prepare("SELECT * FROM job_views WHERE job_id = ? ");
-					        // $check->execute([$jobID]);
-
-					        // if ($check->rowCount() > 0) {
-					        //     // update counter
-					        //     $update = $connect->prepare("UPDATE job_views SET clicks = clicks + 1 WHERE job_id = ? ");
-					        //     $update->execute([$jobID]);
-
-					        // }else{
-					        //     $clicks = 1;
-					        //     $sql = $connect->prepare("INSERT INTO job_views (`company_id`, `job_id`, `clicks`) VALUES(?, ?, ?) ");
-					        //     $sql->execute([$company_id, $jobID, $clicks]);
-
-					        // }
-					        // if(url_to_clickable_link($application_link) ){
-					        // 	$link = url_to_clickable_link($application_link);
-					        // }else{
-					        // 	$link = '<a href="">Link</a>';
-					        // }
+					        
 				        ?>
 				        <div class="row">
 				            
@@ -65,7 +46,7 @@
 		                            </div>
 				                	
 				                    <div class="card-header">
-				                        <a href="<?php echo $id?>" id="<?php echo $application_link?>" class="btn btn-outline-secondary application">Apply Now</a>
+				                        <a href="<?php echo $id?>" data-coy-id="<?php echo $company_id?>" id="<?php echo $application_link?>" class="btn btn-outline-secondary application">Apply Now</a>
 				                    </div>
 				                    <div class="card-body">
 				                        <div class="mb-4">
@@ -73,7 +54,7 @@
 				                        </div>
 				                    </div>
 				                    <div class="card-footer">
-				                        <a href="<?php echo $id?>" class="btn btn-outline-secondary application" id="<?php echo $application_link?>">Apply Now</a>
+				                        <a href="<?php echo $id?>" data-coy-id="<?php echo $company_id?>" class="btn btn-outline-secondary application" id="<?php echo $application_link?>">Apply Now</a>
 				                    </div>
 				                </div>
 				            </div>
@@ -109,13 +90,14 @@
 					document.getElementById('result').innerHTML = link;
 					// We count here on the views
 					var JobId = $(this).attr("href");
+					var company_id = $(this).data("coy-id");
 					// alert(JobId);
 					$.ajax({
 						url:"includes/submitApplyClick",
 						method:"post",
-						data:{JobId:JobId},
+						data:{JobId:JobId, company_id:company_id},
 						success:function(data){
-							alert(data);
+							// alert(data);
 						}
 					})
 

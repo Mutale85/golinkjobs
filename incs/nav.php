@@ -15,7 +15,7 @@
 		<div class="collapse navbar-collapse" id="navbarNavDropdown">
 			<ul class="navbar-nav ms-auto">
 				<li class="nav-item">
-                    <a class="nav-link post_new_job" href="new-job-post" title="post-a-job">POST A JOB</a>
+                    <a class="nav-link" href="post-new-job" title="post-a-job">POST A JOB</a>
                 </li>
 			    
                 <li class="nav-item dropdown">

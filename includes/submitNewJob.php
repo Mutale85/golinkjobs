@@ -28,13 +28,17 @@
 		$sql->execute([$company_id, $job_title, $job_category, $application_link, $role_open_mode, $job_description, $job_type, $job_nature, $salary_range, $start_date, $application_deadline, $estimated_period,$region]);
 		$last_id = $connect->lastInsertId();
 
+		$update = $connect->prepare("UPDATE posted_jobs SET posted = 1 WHERE id = ? AND company_id = ?");
+		$update->execute([$last_id, $company_id]);
+
 		$totalAmount = $estimated_period * 3.99;
 		setcookie("postedJobID", base64_encode($last_id), time()+60*60*24*7, '/');
 		setcookie("userMail", base64_encode($_SESSION['user_email_job_portal']), time()+60*60*24*7, '/');
 		setcookie("customer_name", base64_encode($_SESSION['username']), time()+60*60*24*7, '/');
 		setcookie("totalAmount", base64_encode(number_format($totalAmount)), time()+60*60*24*7, '/');
 		
-		echo "Job Submitted pending payments and verification";
+		// echo "Job Submitted pending payments and verification";
+		echo "Jobs Posted Successfully";
 
 	}
 ?>

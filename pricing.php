@@ -11,7 +11,7 @@
 				<div class="col-md-12">
 					<div class="forms">
 						<h1 class="mb-4">Pricing</h1>
-						<h2>Per $3.99/Day for every Job Post</h2>
+						<h2>10 Free Job Positing, thereafter,  $3.99/Day for every Job Post</h2>
 						<p>Job Portal is a website that belongs to Osabox Limited Company</p>
 						<p>Our Servers are across Germany, Cyprus and The United States for efficiency </p>
 						<p>We have been founded with to help and unite employers, recruiters and job seekers through our platform.</p>

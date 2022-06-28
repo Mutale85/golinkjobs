@@ -2,6 +2,8 @@
 	include "db.php";
 	if (isset($_POST['JobId'])) {
 		$JobId = filter_input(INPUT_POST, 'JobId', FILTER_SANITIZE_SPECIAL_CHARS);
+        $company_id = filter_input(INPUT_POST, 'company_id', FILTER_SANITIZE_SPECIAL_CHARS);
+        
 		$check = $connect->prepare("SELECT * FROM job_views WHERE job_id = ? ");
         $check->execute([$JobId]);
         $count = $check->rowCount();

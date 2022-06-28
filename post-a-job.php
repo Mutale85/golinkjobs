@@ -46,7 +46,8 @@
 								extract($row);
     					?>
 	    					<div class="forms">
-		    					<h2 class="mb-5 text-center">Post A Job For $3.99 / Day</h2>
+		    					<!-- <h2 class="mb-5 text-center">Post A Job For $3.99 / Day</h2> -->
+		    					<h2 class=" text-center mb-5">You First 10 Jobs are Free</h2>
 		    					<hr style="width: 25%; margin: .5em auto; margin-bottom: 1em; height: 10px; background: gray; border-radius: .5em;">
 		    					<form method="post" id="jobForm" enctype="multipart/form-data">
 		    						<div class="row">
@@ -185,8 +186,11 @@
 											<input class="form-check-input mb-3" type="checkbox" name="terms" id="terms" required > I agree to <a href="terms-and-conditions">Terms and Conditions</a>
 										</label>
 			    						<div class="col-md-12">
-			    							<button class="btn btn-outline-secondary shadow" id="submitBtn">Submit Job For <span id="amount_calc">$3.99 / Day</span> </button>
+			    							<button class="btn btn-outline-secondary shadow" id="submitBtn">Submit Job For Free</span> </button>
 			    						</div>
+			    						<!-- <div class="col-md-12">
+			    							<button class="btn btn-outline-secondary shadow" id="submitBtn">Submit Job For <span id="amount_calc">$3.99 / Day</span> </button>
+			    						</div> -->
 			    					</div>
 		    					</form>
 		    				</div>
@@ -439,9 +443,11 @@
 								successNow(data);
 								$("#jobForm")[0].reset();
 								$('#job_description').summernote('reset');
-								$("#submitBtn").html('Submit Job For <span id="amount_calc">$3.99 / Day</span>');
+								// $("#submitBtn").html('Submit Job For <span id="amount_calc">$3.99 / Day</span>');
+								$("#submitBtn").html('Submit Job For Free');
 								setTimeout(function(){
-									window.location = 'post-a-job-final';
+									// window.location = 'post-a-job-final';
+									location.reload();
 								}, 1500);
 							}
 						})
