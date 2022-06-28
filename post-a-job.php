@@ -370,7 +370,7 @@
     		// var region_open_2 = document.getElementById('region_open_2');
     		// region_open_2.style.display = 'none';
     		$(document).on('click', '#role_open_mode', function() {      
-			    $('input[type="radio"]').not(this).prop('checked', false); 
+			    $('#role_open_mode"]').not(this).prop('checked', false); 
 			    var data = $(this).val();
 			    if(data === '2') {
 			    	region_open.style.display = 'block';
@@ -398,7 +398,7 @@
 		    $( function() {
     			$( "#datepicker" ).datepicker({ minDate: +1, maxDate: "+3M +10D" });
   			});
-		    var amount_calc = document.getElementById('amount_calc');
+		    // var amount_calc = document.getElementById('amount_calc');
   			$("#datepicker").change(function(){
 				var deadline = $(this).val();
 				var start_date = $("#start_date").val();
@@ -409,7 +409,7 @@
 				if (deadline !== '') {
 					document.getElementById('estimated_period').value = days;
 					var amount = roundToTwo(days * 3.99);
-					amount_calc.innerHTML = '$'+ amount + ' For '+ days + ' Days';
+					// amount_calc.innerHTML = '$'+ amount + ' For '+ days + ' Days';
 				}else{
 					document.getElementById('estimated_period').value = '';
 				}
