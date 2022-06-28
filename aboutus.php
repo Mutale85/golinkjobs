@@ -11,9 +11,8 @@
 				<div class="col-md-12">
 					<div class="forms">
 						<h1 class="mb-4">About Us</h1>
-						<p>Job Portal is a website that belongs to Osabox Limited Company</p>
-						<p>Our Servers are across Germany, Cyprus and The United States for efficiency </p>
-						<p>We have been founded with to help and unite employers, recruiters and job seekers through our platform.</p>
+						<p>We know that you wish to find the right canditates to fill your job vanacies, thats why we are here to help you achieve that task by connect you to sutably qualified candidates.</p>
+
 						<ul class="">
 							<li>
 								Employers / Recruiters posts their jobs at anytime of the day.
@@ -31,9 +30,10 @@
 							<li>Tips on how to create a catchy Resume or Curriculum Vitae</li>
 							<li>Tips on how to get ready for an interview</li>
 						</ul>
-						<p>Our Legal Compliance</p>
-						<embed src="http://localhost/accessremotejobs.com/cv_uploads/Tax Clearance 2022_copy.pdf" type="application/pdf" width="100%" height="800px" />
+						<h3>Our Legal Compliance</h3>
+						<embed src="http://localhost/golinkjobs.com/cv_uploads/Tax Clearance 2022_copy.pdf" type="application/pdf" width="100%" height="800px" />
 						<h4 class="mt-4 mb-3">Contact Us</h4>
+
 						<form method="post" id="contactForm">
 							<div class="row">
 								<div class="form-group mb-3">

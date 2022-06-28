@@ -6,6 +6,6 @@
 6. sudo ufw allow 'Apache Full'
 7. sudo ufw delete allow 'Apache'
 8. sudo certbot --apache/
-
+Done. 
 9. sudo systemctl status certbot.timer
 <script src="https://gist.github.com/Mutale85/26386399f28d7d4490fc845499f0f936.js"></script>
