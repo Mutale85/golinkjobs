@@ -10,12 +10,7 @@
 		$company_id = $_SESSION['user_id'];
 		$username = $_SESSION['username'];
 	?>
-	<style>
-		.btn-outline-secondary {
-			padding: 14px 20px;
-			border-radius: 23px;
-		}
-	</style>
+
 </head>
 <body>
 	<?php include 'incs/nav.php';?>
@@ -27,19 +22,19 @@
 						<h1>Welcome <?php echo $_SESSION['username']?></h1>
 					</div>
 					<div class="col-md-12 text-center mb-5" id="supportMenu">
-		                <a class="btn btn-outline-secondary mb-2" href="home" title="Home"><i class="bi bi-building"></i> Home</a>
+		                <a class="btn btn-outline-secondary btn-sm mb-2" href="home" title="Home"><i class="bi bi-building"></i> Home</a>
 		                
 		                
-		                <a class="btn btn-outline-secondary mb-2" href="post-a-job" title="post-a-job"><i class="bi bi-house-door"></i> Post New Job</a>
+		                <a class="btn btn-outline-secondary btn-sm mb-2" href="post-a-job" title="post-a-job"><i class="bi bi-house-door"></i> Post New Job</a>
 		                
 		                
-		                <a class="btn btn-outline-secondary mb-2" href="company-profile" title="company-profile"> <i class="bi bi-briefcase"></i> Company Profile</a>
+		                <a class="btn btn-outline-secondary btn-sm mb-2" href="company-profile" title="company-profile"> <i class="bi bi-briefcase"></i> Company Profile</a>
 		                
 		                
-		                <a class="btn btn-outline-secondary mb-2" href="browse-candidates" title="browse"><i class="bi bi-search"></i> Browse Candidates</a>
+		                <a class="btn btn-outline-secondary btn-sm mb-2" href="browse-candidates" title="browse"><i class="bi bi-search"></i> Browse Candidates</a>
 		                
 		                
-		                <a class="btn btn-outline-secondary mb-2" href="logout" title="logout"> <i class="bi bi-box-arrow-right"></i> Sign Out</a>
+		                <a class="btn btn-outline-secondary btn-sm mb-2" href="logout" title="logout"> <i class="bi bi-box-arrow-right"></i> Sign Out</a>
 		            </div>
 		            <div class="col-md-12 forBig">
 		            	<h3 class="mb-3 text-center text-secondary">Browse candidates in the following categories</h3>

@@ -2,8 +2,8 @@
 <html>
 <head>
 	<?php include("incs/header.php");
-		if (isset($_SESSION['user_email_job_portal'])) {
-	        header("location:./");
+		if (isset($_SESSION['user_email_job_portal_login'])) {
+	        header("location:home");
 	    }
 	?>
     <style>
@@ -150,7 +150,7 @@
                         <a href="forgot-password" title="password">Reset Password</a>
                     </p>
 	                <p>New here? 
-	                        <a href="register" title="register">Create your employers account</a>
+	                        <a href="create-account" title="create-account">Create your account</a>
 	                    </p>
 	            </fieldset>
 	        </form>   
@@ -189,7 +189,7 @@
 				e.preventDefault();
 				var data = $(this).serialize();
 				$.ajax({
-					url:"includes/loginMember",
+					url:"includes/loginMember2",
 					method:"POST",
 					data:data,
 					beforeSend:function(){

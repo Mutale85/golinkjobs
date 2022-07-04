@@ -23,8 +23,8 @@
                     Job Seeker
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="resume" title="resume">Post Resume </a></li>
-                        <li><a class="dropdown-item" href="view-my-cv" title="view-my-cv" id="viewResume">My Resume</a></li>
+                        <li><a class="dropdown-item" href="post-resume" title="post-resume">Post Resume </a></li>
+                        <li><a class="dropdown-item" href="my-resume" title="my-resume" id="">My Resume</a></li>
                     </ul>
                 </li>
 			    
@@ -37,6 +37,9 @@
                         <li><a class="dropdown-item" href="register" title="login">Create Account</a></li>
                         <li><a class="dropdown-item" href="pricing" title="pricing">Pricing</a></li>
                     </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="login" title="login">Login</a>
                 </li>
 	    		<li class="nav-item">
                     <a class="nav-link " href="the-blog" title="theblog">How To</a>
@@ -60,18 +63,31 @@
         </div>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto">
+                
                 <li class="nav-item">
-                    <a class="nav-link " href="home" title="Home"><i class="bi bi-building"></i> Home</a>
+                    <a class="nav-link " href="post-a-job" title="post-a-job"> Post New Job</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="post-a-job" title="post-a-job"><i class="bi bi-house-door"></i> Post New Job</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Job Seeker
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="post-resume" title="post-resume">Post Resume </a></li>
+                        <li><a class="dropdown-item" href="my-resume" title="my-resume">My Resume</a></li>
+                    </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="company-profile" title="company-profile"> <i class="bi bi-briefcase"></i> Company Profile</a>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Employer
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="home" title="home">Our Posted Jobs</a></li>
+                        <li><a class="dropdown-item" href="company-profile" title="company-profile">Company Profile</a></li>
+                        <li><a class="dropdown-item" href="browse-candidates" title="browse-candidates" id="viewResumes">Candidates</a></li>
+                    </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="browse-candidates" title="browse"><i class="bi bi-search"></i> Browse Candidates</a>
-                </li>
+                
                 <li class="nav-item">
                     <a class="nav-link" href="logout" title="logout"> <i class="bi bi-box-arrow-right"></i> Sign Out</a>
                 </li>
