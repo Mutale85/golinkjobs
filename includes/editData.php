@@ -19,4 +19,14 @@
 		}
 		echo $data;
 	}
+
+	if(isset($_POST['resume_code'])){
+		$query = $connect->prepare("SELECT * FROM posted_cvs WHERE code = ? AND email = ?");
+		$query->execute([$_POST['resume_code'], $_POST['email']]);
+		$row = $query->fetch();
+		if ($row) {
+			$data = json_encode($row);
+		}
+		echo $data;
+	}
 ?>

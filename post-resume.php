@@ -46,6 +46,7 @@
 														<i class="bi bi-person"></i>
 													</span>
 													<input type="text" name="lastname" id="lastname" class="form-control" required placeholder="Lastname">
+													<input type="hidden" name="dataID" id="dataID" class="form-control">
 												</div>
 											</div>
 											<div class="form-group col-md-6 mb-3">
@@ -127,12 +128,12 @@
 													</span>
 													<select class="form-control" name="work_experience" id="work_experience" required>
 														<option value="">How many Years have you Worked?</option>
-														<option value="0-1 Years"> 0-1 Year</option>
-														<option value="1-3 Years">1-3 Years</option>
-														<option value="3-7 Years">3-7 Years</option>
-														<option value="7-12 Years">7-12 Years</option>
-														<option value="12-18 Years">12-18 Years</option>
-														<option value="18-25 Years">18-25 Years</option>
+														<option value="0-1"> 0-1 Year</option>
+														<option value="1-3">1-3 Years</option>
+														<option value="3-7">3-7 Years</option>
+														<option value="7-12">7-12 Years</option>
+														<option value="12-18">12-18 Years</option>
+														<option value="18-25">18-25 Years</option>
 														<option value="25 Plus">25 Plus Years</option>
 													</select>
 												</div>
@@ -166,12 +167,12 @@
 								</div>
 								<div class="card-body">
 									<ul class="list-group">
-										<li class="list-group-item">First Name: <span id="firstname_span"></span></li>
-										<li class="list-group-item">Last Name: <span id="lastname_span"></span></li>
-										<li class="list-group-item">Expertise: <span id="job_category_span"></span></li>
-										<li class="list-group-item">Education: <span id="education_level_span"></span></li>
-										<li class="list-group-item">Field Studied: <span id="field_studied_span"></span></li>
-										<li class="list-group-item">Experience: <span id="work_experience_span"></span></li>
+										<li class="list-group-item">First Name: <span id="firstname_span" class="float-end"></span></li>
+										<li class="list-group-item">Last Name: <span id="lastname_span" class="float-end"></span></li>
+										<li class="list-group-item">Expertise: <span id="job_category_span" class="float-end"></span></li>
+										<li class="list-group-item">Education: <span id="education_level_span" class="float-end"></span></li>
+										<li class="list-group-item">Field Studied: <span id="field_studied_span" class="float-end"></span></li>
+										<li class="list-group-item">Experience: <span id="work_experience_span" class="float-end"></span></li>
 									</ul>
 								</div>
 								<div>
@@ -270,11 +271,11 @@
 				var work_experience = $(this).val();
 				if( work_experience !== ""){
 					localStorage.setItem("work_experience", this.value);
-					document.getElementById("work_experience_span").innerHTML = localStorage.getItem("work_experience");
+					document.getElementById("work_experience_span").innerHTML = localStorage.getItem("work_experience") + ' Years';
 				}
 			});
 
-			document.getElementById("work_experience_span").innerHTML = localStorage.getItem("work_experience");
+			document.getElementById("work_experience_span").innerHTML = localStorage.getItem("work_experience") + ' Years';
 			if(localStorage.getItem('work_experience')){
 		        $('#work_experience').val(localStorage.getItem('work_experience'));
 		    }

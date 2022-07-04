@@ -7,6 +7,10 @@
     		if (!isset($_SESSION['user_email_job_portal'])) {
 				header("location:login");
 			}
+
+			if (isset($_GET['resume'])) {
+				$code = $_GET['resume'];
+			}
     	?>
  	</head>
   	<body>
@@ -46,6 +50,7 @@
 														<i class="bi bi-person"></i>
 													</span>
 													<input type="text" name="lastname" id="lastname" class="form-control" required placeholder="Lastname">
+													<input type="hidden" name="dataID" id="dataID" class="form-control" value="">
 												</div>
 											</div>
 											<div class="form-group col-md-6 mb-3">
@@ -127,12 +132,12 @@
 													</span>
 													<select class="form-control" name="work_experience" id="work_experience" required>
 														<option value="">How many Years have you Worked?</option>
-														<option value="0-1 Years"> 0-1 Year</option>
-														<option value="1-3 Years">1-3 Years</option>
-														<option value="3-7 Years">3-7 Years</option>
-														<option value="7-12 Years">7-12 Years</option>
-														<option value="12-18 Years">12-18 Years</option>
-														<option value="18-25 Years">18-25 Years</option>
+														<option value="0-1"> 0-1 Year</option>
+														<option value="1-3">1-3 Years</option>
+														<option value="3-7">3-7 Years</option>
+														<option value="7-12">7-12 Years</option>
+														<option value="12-18">12-18 Years</option>
+														<option value="18-25">18-25 Years</option>
 														<option value="25 Plus">25 Plus Years</option>
 													</select>
 												</div>
@@ -148,7 +153,7 @@
 										
 											<div class="col-md-12 mb-3">
 												<label>
-													<input class="form-check-input" type="checkbox" name="terms" id="terms"> I agree to <a href="terms-and-conditions" title="terms"> Terms</a>
+													<input class="form-check-input" type="checkbox" name="terms" id="terms" required> I agree to <a href="terms-and-conditions" title="terms"> Terms</a>
 												</label>
 											</div>
 										</div>
@@ -166,12 +171,12 @@
 								</div>
 								<div class="card-body">
 									<ul class="list-group">
-										<li class="list-group-item">First Name: <span id="firstname_span"></span></li>
-										<li class="list-group-item">Last Name: <span id="lastname_span"></span></li>
-										<li class="list-group-item">Expertise: <span id="job_category_span"></span></li>
-										<li class="list-group-item">Education: <span id="education_level_span"></span></li>
-										<li class="list-group-item">Field Studied: <span id="field_studied_span"></span></li>
-										<li class="list-group-item">Experience: <span id="work_experience_span"></span></li>
+										<li class="list-group-item">First Name: <span id="firstname_span" class="float-end"></span></li>
+										<li class="list-group-item">Last Name: <span id="lastname_span" class="float-end"></span></li>
+										<li class="list-group-item">Expertise: <span id="job_category_span" class="float-end"></span></li>
+										<li class="list-group-item">Education: <span id="education_level_span" class="float-end"></span></li>
+										<li class="list-group-item">Field Studied: <span id="field_studied_span" class="float-end"></span></li>
+										<li class="list-group-item">Experience: <span id="work_experience_span" class="float-end"></span></li>
 									</ul>
 								</div>
 								<div>
@@ -332,12 +337,42 @@
 
 			var loadFile = function(event) {
 			    var output = document.getElementById('embeddedPDF');
-			    // output.style.display = "block";
 			    output.src = URL.createObjectURL(event.target.files[0]);
 			    output.onload = function() {
 			      URL.revokeObjectURL(output.src) // free memory
 			    }
 			};
+
+			function editData(){
+				var resume_code = '<?php echo $code ?>';
+				var email = '<?php echo $_SESSION['user_email_job_portal']?>';
+				$.ajax({
+					url:"includes/editData",
+					method:"post",
+					data:{resume_code:resume_code, email:email},
+					dataType:"JSON", 
+					success:function(data){
+						$("#dataID").val(data.id);
+						$("#firstname").val(data.firstname);
+						$("#lastname").val(data.lastname);						
+						$("#job_category").val(data.job_category);
+						$("#education_level").val(data.education_level);
+						$("#field_studied").val(data.field_studied);
+						$("#work_experience").val(data.work_experience);
+						$("#cv_file").html(data.cv_file);
+						var output = document.getElementById('embeddedPDF');
+						output.src ='cv_uploads/'+data.cv_file;
+
+						$("#firstname_span").html(data.firstname);
+						$("#lastname_span").html(data.lastname);						
+						$("#job_category_span").html(data.job_category);
+						$("#education_level_span").html(data.education_level);
+						$("#field_studied_span").html(data.field_studied);
+						$("#work_experience_span").html(data.work_experience + " Years");
+					}
+				})
+			}
+			editData();
 		</script>
   	</body>
 </html>

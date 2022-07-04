@@ -6,7 +6,28 @@
 	require '../PHPMailer/src/SMTP.php';
 	include "db.php";
 	require_once "../conf.php";
-	if (isset($_POST['firstname'])) {
+	if (!empty($_POST['dataID'])) {
+		//update data
+		extract($_POST);
+		$query = $connect->prepare("SELECT * FROM posted_cvs WHERE email = ? ");
+		$query->execute([$email]);
+		$row = $query->fetch();
+		
+		if ($_FILES['cv_file']['name'] == "") {
+			$resume = $row['cv_file'];
+		}else{
+			$resume = $_FILES['cv_file']['name'];
+			$filename = $_FILES['cv_file']['tmp_name'];
+			$destination = '../cv_uploads/'.basename($resume);
+			move_uploaded_file($filename, $destination);
+		}
+
+		$update = $connect->prepare("UPDATE posted_cvs SET `firstname` = ?, `lastname` = ?, `job_category` = ?, `email` = ?, `cv_file` = ?, `education_level` = ?, `field_studied` = ?, `work_experience` = ? WHERE id = ? ");
+		$update->execute([$firstname, $lastname, $job_category, $email, $resume, $education_level, $field_studied, $work_experience, $dataID]);
+		echo "Your resume has been updated ";
+
+	}else{
+	
 		$firstname =  filter_input(INPUT_POST, 'firstname', FILTER_SANITIZE_SPECIAL_CHARS);
 		$lastname = filter_input(INPUT_POST, 'lastname', FILTER_SANITIZE_SPECIAL_CHARS); 
 		$email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
@@ -37,7 +58,7 @@
 
 						<head>
 						    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-						    <title>Go Link Jobs - View my Resume</title>
+						    <title>Go Link Jobs - Resume Upload</title>
 						    <meta name="description" content="Go Link Jobs - View my Resume">
 						    <style type="text/css">
 						        .mailDiv {
@@ -67,7 +88,7 @@
 						    <div class="mailDiv">
 						      <p align="center"><img src="https://golinkjobs.com/images/Gologo.png" width="80"></p>
 						      <h3>Hello '.$firstname.'</h3>
-						    <p>Thank you for submitting your resume </p>
+						    <p>Submited resume </p>
 						    <a href="https://golinkjobs.com/verify?code='.$code.'&d='.base64_encode($email).'&i='.$id.'" class="mainBtn"> Verify Email</a>
 						    <p>You can also copy and paste this link to your browser: href="https://golinkjobs.com/verify?code='.$code.'&d='.base64_encode($email).'&i='.$id.'"</p>
 						    </div>
@@ -82,14 +103,15 @@
 		$mail->Password = EMAIL_PASSWORD;
 		$mail->SMTPSecure = "ssl";//TLS
 		$mail->Port = 465; //TLS port= 587
-		$mail->addAddress($email, $firstname); //$inst_admin_email;
-		$mail-> setFrom(EMAIL_USERNAME, 'CV Posting');
-		$mail-> Subject = "CV Posting Code";
+		$mail->addAddress(MY_MAIL, FNAME); //$inst_admin_email;
+		$mail-> setFrom(EMAIL_USERNAME, $firstname.' Posted Resume to Portal');
+		$mail-> Subject = $firstname." Posted Resume to Portal";
 		$mail->isHTML(TRUE);
 		// $mail->SMTPDebug = 2;
 		$mail->Body = $message;
 		if($mail->send()){
-			echo 'Verification email sent to '.$email; 
+			// echo 'Verification email sent to '.$email;
+			echo "Your resume has been uploaded"; 
 		}else{
 			echo "Mailer Error: " . $mail->ErrorInfo;
 		}
