@@ -1,4 +1,4 @@
-<base href="http://localhost/golinkjobs.com/">
+<base href="https://golinkjobs.com/">
 <!DOCTYPE html>
 <html lang="en">
   	<head>

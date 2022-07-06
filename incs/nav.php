@@ -51,9 +51,9 @@
 <?php 
 	}else{
 ?>
-<nav class="navbar navbar-expand-lg navbar-light bg-white p-3 border-bottom fixed-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom fixed-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="./">Partners Portal</a>
+        <a class="navbar-brand" href="./"><img src="images/Gologo.png" class="img-fluid Logo" alt="logo" width="40"> Golinkjobs</a>
         <div class="navbar-toggler three cols" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <div class="hamburger" id="hamburger-3">
                 <span class="line"></span>

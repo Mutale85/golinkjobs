@@ -1,4 +1,4 @@
-<base href="http://localhost/golinkjobs.com/">
+<base href="https://golinkjobs.com/">
 <!DOCTYPE html>
 <html>
 <head>
@@ -72,7 +72,7 @@
 										<h4 class="mb-4 text-center"> <?php echo $firstname?>'s CV</h4>
 									</div>
 									<div class="card-body">
-										<embed src="http://localhost/golinkjobs.com/cv_uploads/<?php echo $cv_file?>" type="application/pdf" width="100%" height="800px" />
+										<embed src="https://golinkjobs.com/cv_uploads/<?php echo $cv_file?>" type="application/pdf" width="100%" height="800px" />
 									</div>
 								</div>
 							</div>

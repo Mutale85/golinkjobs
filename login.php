@@ -150,7 +150,7 @@
                         <a href="forgot-password" title="password">Reset Password</a>
                     </p>
 	                <p>New here? 
-	                        <a href="register" title="register">Create your employers account</a>
+	                        <a href="register" title="register">Create your account</a>
 	                    </p>
 	            </fieldset>
 	        </form>   
